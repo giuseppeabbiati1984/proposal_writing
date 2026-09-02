@@ -1,0 +1,192 @@
+% ==============================================================================
+% CEBE Interdisciplinary Fellowship Programme -- Call for PhD and PostDoc projects
+% Project proposal template
+%
+% Formatting requirement from the call: Times New Roman, 12 pt,
+% single-spaced text, 2.5 cm margins.
+%
+% Font choice:
+%   This template uses `mathptmx`, a Times-metric-compatible font that
+%   ships with every TeX distribution (no extra font files needed, works
+%   the same on Windows/MiKTeX, Overleaf, and Linux TeX Live). It is
+%   visually indistinguishable from Times New Roman and satisfies "Times
+%   New Roman, 12pt" in practice.
+%
+%   If you would rather use the literal Times New Roman TTF installed on
+%   this Windows machine, compile with XeLaTeX or LuaLaTeX instead and
+%   swap the font block below for:
+%       \usepackage{fontspec}
+%       \setmainfont{Times New Roman}
+%   (comment out \usepackage{mathptmx} in that case).
+%
+% Build: pdflatex -> bibtex -> pdflatex -> pdflatex   (or just `latexmk -pdf main.tex`)
+% ==============================================================================
+
+\documentclass[12pt,a4paper]{article}
+
+% ---- Page geometry: 2.5 cm margins on all sides ----
+\usepackage[a4paper,margin=2.5cm]{geometry}
+
+% ---- Font: Times-compatible, 12pt (set via documentclass option above) ----
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+
+% ---- Single-spaced body text (this is already LaTeX's default, set explicitly) ----
+\usepackage{setspace}
+\singlespacing
+
+% ---- Useful packages ----
+\usepackage{graphicx}      % \includegraphics for a CEBE/university logo on the frontpage
+\usepackage{enumitem}      % tighter, controllable lists
+\usepackage{booktabs}      % clean tables (applicant list)
+\usepackage[numbers,sort&compress]{natbib}  % references; bibliography style set below
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref} % load near-last
+
+% ---- Section numbering to mirror the call's own numbering (1, 2, 2.1 ... , 3, 4) ----
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+
+% ---- Lightweight page-limit tracker -----------------------------------------
+% Prints "PAGEMARK: <label> -- page N" to the compile log at each call. Grep
+% the log (main.log) for "PAGEMARK" after compiling to check where each
+% page-limited section starts/ends against the call's stated maxima:
+%   Project Summary               max 1/2 page
+%   Project Description           max 4 pages (excluding references)
+%   Project relevance to CEBE     max 1/2 page
+%   Sustainability goals          max 1/2 page
+\newcommand{\pagemark}[1]{\typeout{PAGEMARK: #1 -- page \thepage}}
+
+\begin{document}
+
+% ==============================================================================
+% FRONTPAGE
+% Required content: title of project, name and affiliation of applicants,
+% table of contents.
+% ==============================================================================
+\begin{titlepage}
+\centering
+\vspace*{1.5cm}
+
+% Uncomment and point at a logo file if you want the CEBE / university mark here:
+% \includegraphics[width=4cm]{cebe-logo.png}\par\vspace{1cm}
+
+{\large CEBE Interdisciplinary Fellowship Programme}\par
+{\large Call for PhD and PostDoc Projects}\par
+\vspace{1.5cm}
+
+{\Huge\bfseries [PROJECT TITLE]}\par
+\vspace{0.5cm}
+{\large [PhD project / Postdoc project -- delete as appropriate]}\par
+
+\vspace{2cm}
+
+\begin{tabular}{@{}p{3.2cm}p{4.5cm}p{6.5cm}@{}}
+\toprule
+\textbf{Role} & \textbf{Name} & \textbf{Affiliation} \\
+\midrule
+Principal Investigator (main supervisor/mentor) & [Name] & [Department, CEBE partner university] \\
+Co-supervisor & [Name] & [Department, university] \\
+Co-supervisor & [Name, if applicable] & [Department, university] \\
+Candidate (if named) & [Name or ``to be recruited''] & [Affiliation] \\
+\bottomrule
+\end{tabular}
+
+\vspace{2cm}
+[Submission date]
+
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\newpage
+
+% ==============================================================================
+% 1. PROJECT SUMMARY  (max 1/2 page)
+% ==============================================================================
+\pagemark{Project Summary -- start}
+\section{Project Summary}
+
+[Half a page, no more. One paragraph that a non-specialist reviewer can
+read in two minutes: the problem, the interdisciplinary angle, the
+approach, and the expected contribution.]
+
+\pagemark{Project Summary -- end}
+
+% ==============================================================================
+% 2. PROJECT DESCRIPTION  (max 4 pages, excluding references)
+% Required subsection headings -- keep exactly as below.
+% ==============================================================================
+\pagemark{Project Description -- start}
+\section{Project Description}
+
+\subsection{Motivation, Significance and Scientific Challenges}
+
+[Clear description of the vision and goals, the distinguishing features
+and foci of the project.]
+
+[Motivation for why a doctoral student or postdoc specifically -- rather
+than, e.g., a staff research project -- is the right vehicle for this
+interdisciplinary work.]
+
+\subsection{State of the Art}
+
+[Current knowledge in each of the disciplines being bridged, and --
+importantly -- the gap that only becomes visible/addressable at their
+intersection.]
+
+\subsection{Scientific Approach, Methodology, and Novelty}
+
+[Research questions/hypotheses, methodology, work plan. Describe the
+research contribution and its potential impact.]
+
+\subsection{Research Environment and Supervision}
+
+[Description of the research environment and infrastructure at each
+participating group, demonstrating feasibility of the proposed project.]
+
+[Description of the potential benefits and synergies expected through
+the interdisciplinary collaboration -- be concrete: what does each side
+bring that the other lacks?]
+
+\subsection{Stakeholders involved in the project}
+
+[Which industry partners and/or other stakeholders are involved, and
+how -- e.g. co-supervision, data access, case studies, advisory role,
+in-kind contribution, planned dissemination.]
+
+\pagemark{Project Description -- end}
+
+% References for the Project Description (kept here since the call's
+% 4-page limit for this section explicitly excludes the reference list).
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+% ==============================================================================
+% 3. PROJECT RELEVANCE TO CEBE RESEARCH FIELDS  (max 1/2 page)
+% ==============================================================================
+\pagemark{CEBE relevance -- start}
+\section{Project relevance to CEBE research fields}
+
+[Identify the relevant CEBE research field(s) from the list of seven
+(see www.cebe.dk), and describe the expected contribution to that
+field / those fields. Be explicit and specific rather than mapping to
+all seven.]
+
+\pagemark{CEBE relevance -- end}
+
+% ==============================================================================
+% 4. SUSTAINABILITY GOALS AND RELATION TO THE CEBE PROGRAM VISION  (max 1/2 page)
+% ==============================================================================
+\pagemark{Sustainability goals -- start}
+\section{Sustainability goals of the project and relation to the CEBE program vision}
+
+[Specific sustainability objectives, including any sustainability-related
+trade-offs the project may involve.]
+
+[Sustainability-related conceptual and methodological choices made in
+the project design.]
+
+\pagemark{Sustainability goals -- end}
+
+\end{document}
