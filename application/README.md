@@ -9,9 +9,10 @@ goes.
 
 - The proposal: `main-*.tex`, e.g. `main-cebe2026.tex` (any name other
   than `main-template.tex`, which stays in `../templates/`).
-- CVs: `cv-*.tex`, one file per person, e.g. `cv-pi.tex`,
-  `cv-cosupervisor-jhonattan.tex`, `cv-cosupervisor-carolin.tex`,
-  `cv-cosupervisor-ueli.tex`, `cv-candidate-lorenzo.tex`.
+- CVs: `CV-<GivenName>.tex`, one file per person. The five expected
+  files (already instantiated from `cv-template.tex`, see
+  `../AGENTS.md`): `CV-Giuseppe.tex`, `CV-Jhonattan.tex`,
+  `CV-Carolin.tex`, `CV-Ueli.tex`, `CV-Lorenzo.tex`.
 - `references.bib` — the real, growing bibliography cited in the
   proposal (distinct from the stub bib in `../templates/`).
 
@@ -21,12 +22,18 @@ give me feedback on the application" commands.
 
 ## Getting started
 
-To start the proposal or a CV, copy the corresponding template from
-`../templates/` into this folder under one of the names above, e.g.:
+To start the proposal, copy the template from `../templates/` into
+this folder under a name of your own choosing, e.g.:
 
 ```
 cp ../templates/main-template.tex main-cebe2026.tex
-cp ../templates/cv-template.tex cv-pi.tex
+```
+
+The five CVs already exist under the names above; to add a CV for
+someone not yet on the team, copy the template the same way, e.g.:
+
+```
+cp ../templates/cv-template.tex CV-NewPerson.tex
 ```
 
 Once files exist here, "please update all templates" will keep their
@@ -40,7 +47,7 @@ real file names here, e.g.:
 
 ```
 latexmk -pdf main-cebe2026.tex
-latexmk -pdf cv-pi.tex   # repeat per CV
+latexmk -pdf CV-Giuseppe.tex   # repeat per CV
 ```
 
 ## Checking page limits
@@ -51,7 +58,7 @@ to hide them before the final submission build. After compiling:
 
 ```
 grep PAGEMARK main-cebe2026.log
-grep PAGEMARK cv-pi.log
+grep PAGEMARK CV-Giuseppe.log
 ```
 
 ## Assembling the submission PDF
@@ -61,9 +68,8 @@ that order. Once every file is compiled to its own PDF, merge them
 (`pdfunite` on Linux/WSL, or `pdftk`):
 
 ```
-pdfunite main-cebe2026.pdf cv-pi.pdf cv-cosupervisor-jhonattan.pdf \
-  cv-cosupervisor-carolin.pdf cv-cosupervisor-ueli.pdf \
-  cv-candidate-lorenzo.pdf submission.pdf
+pdfunite main-cebe2026.pdf CV-Giuseppe.pdf CV-Jhonattan.pdf \
+  CV-Carolin.pdf CV-Ueli.pdf CV-Lorenzo.pdf submission.pdf
 ```
 
 Submit `submission.pdf` via the EasyChair portal linked from www.cebe.dk.

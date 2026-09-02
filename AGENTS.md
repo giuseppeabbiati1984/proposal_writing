@@ -20,13 +20,15 @@ This agent is a reviewer of Giuseppe's proposal, not a co-author.
   annotations, evolved over time as the template itself is improved.
 - `application/main-*.tex` (any name other than `main-template.tex`, e.g.
   `main-cebe2026.tex`) is the *actual proposal* Giuseppe is writing.
-  `application/cv-*.tex` (any name other than `cv-template.tex`, e.g.
-  `cv-pi.tex`, `cv-candidate-lorenzo.tex`) are the *actual CVs*.
+  `application/CV-<GivenName>.tex` (any name other than
+  `cv-template.tex`, e.g. `CV-Giuseppe.tex`, `CV-Lorenzo.tex`) are the
+  *actual CVs*, one per team member — see "Knowledge base for review"
+  for the full list of five expected files.
 
 **What the agent may and may not touch**
 
 - Never write, edit, or supply replacement text for the *content* of a
-  `application/main-*.tex` or `application/cv-*.tex` file (i.e. any such
+  `application/main-*.tex` or `application/CV-*.tex` file (i.e. any such
   file other than the templates themselves), or `application/references.bib`.
   Giuseppe writes and edits the proposal and CVs himself.
 - The templates (`main-template.tex`, `cv-template.tex`) are something
@@ -35,7 +37,7 @@ This agent is a reviewer of Giuseppe's proposal, not a co-author.
   reviewing content.
 - **Template sync**: when Giuseppe asks to update the template *in* the
   proposal (or in a CV) — i.e. bring an existing `main-*.tex` (or
-  `cv-*.tex`) file's structure up to date with the current
+  `CV-*.tex`) file's structure up to date with the current
   `main-template.tex` (or `cv-template.tex`) — update that file's
   structure, formatting, and preamble to match the current template
   exactly, while preserving every word of Giuseppe's existing written
@@ -60,7 +62,7 @@ This agent is a reviewer of Giuseppe's proposal, not a co-author.
 Two standing commands drive most of the agent's work in this repo:
 
 - **"Please update all templates"** → sync every existing content file
-  (`application/main-*.tex` and `application/cv-*.tex`, i.e. all such files
+  (`application/main-*.tex` and `application/CV-*.tex`, i.e. all such files
   except `main-template.tex`/`cv-template.tex` themselves) to the
   latest structure, formatting, and preamble of the corresponding
   template. This is the "template sync" action described above: apply
@@ -70,14 +72,14 @@ Two standing commands drive most of the agent's work in this repo:
 - **"Please give me feedback on the application"** → run a full review
   pass over the whole application, where *application* = the proposal
   (`application/main-*.tex`, excluding the template) plus all CVs
-  (`application/cv-*.tex`, excluding the template). Review every section
+  (`application/CV-*.tex`, excluding the template). Review every section
   present against the call's required structure, the evaluation
   criteria, and the knowledge base (below) — including an explicit
   consistency check against the RF7 roadmap document (see "Knowledge
   base for review") — then append one dated entry to `FEEDBACK.md` per
   `FEEDBACK.md`'s own format/rules, summarizing the findings across the
   whole application (not just one file). If a file referenced by the
-  required structure doesn't exist yet (e.g. no `cv-*.tex` for a
+  required structure doesn't exist yet (e.g. no `CV-*.tex` for a
   supervisor), note that as a gap rather than skipping it silently.
 
 These phrases (or close paraphrases of them) are the trigger for these
@@ -93,13 +95,13 @@ unless explicitly asked for a template update).
   the bibliography, flag claims about prior literature that aren't
   backed by any bib entry, and point out relevant entries already in
   the file that a section could be citing but isn't.
-- **CVs**: five are expected in `application/`, one per team member:
-  - `application/cv-pi.tex` — Giuseppe (PI)
-  - `application/cv-cosupervisor-jhonattan.tex` — Jhonattan G T
-    Martinez Ribon
-  - `application/cv-cosupervisor-carolin.tex` — Carolin Reichherzer
-  - `application/cv-cosupervisor-ueli.tex` — Ueli Angst
-  - `application/cv-candidate-lorenzo.tex` — Lorenzo Loyola
+- **CVs**: five are expected in `application/`, one per team member,
+  named `CV-<GivenName>.tex`:
+  - `application/CV-Giuseppe.tex` — Giuseppe (PI)
+  - `application/CV-Jhonattan.tex` — Jhonattan G T Martinez Ribon
+  - `application/CV-Carolin.tex` — Carolin Reichherzer
+  - `application/CV-Ueli.tex` — Ueli Angst
+  - `application/CV-Lorenzo.tex` — Lorenzo Loyola
   All five have been instantiated from `cv-template.tex` with name/
   title/affiliation pre-filled from "Team" below where known;
   everything else (PhD year, achievements, supervision counts,
@@ -223,10 +225,13 @@ requires the PI's institution (Giuseppe, Aarhus) to be a CEBE partner —
 other research groups can be elsewhere, consistent with CEBE explicitly
 welcoming international collaborators.
 
-CVs for Jhonattan, Carolin, Ueli, and Lorenzo are not yet in the repo;
-until `application/cv-*.tex` exists for each, treat the profiles above
-(from the linked pages and web search) as provisional background only,
-not as a substitute for the CV-grounding rule below.
+CVs for Jhonattan, Carolin, Ueli, and Lorenzo now exist in
+`application/` (see "Knowledge base for review" for the five
+filenames), but only name/title/affiliation are filled in beyond the
+template; treat the profiles above (from the linked pages and web
+search) as provisional background only for anything not yet completed,
+not as a substitute for the CV-grounding rule below once each CV is
+filled in.
 
 ### Fixed facts from the call (do not deviate)
 
@@ -378,7 +383,7 @@ full pass and any ad hoc review request for a single section.
 5. Track page/length limits via `grep PAGEMARK` after Giuseppe
    compiles, and flag overruns.
 6. Off-limits for content edits: the actual content of
-   `application/main-*.tex` and `application/cv-*.tex` files (any such
+   `application/main-*.tex` and `application/CV-*.tex` files (any such
    file other than the templates themselves), and
    `application/references.bib`. The templates (`main-template.tex`,
    `cv-template.tex`) may be edited when Giuseppe asks to evolve the
