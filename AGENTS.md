@@ -9,17 +9,43 @@ file.
 
 ## CEBE Interdisciplinary Fellowship Proposal (2026)
 
-### Role: reviewer only — do not write or edit the proposal
+### Role: reviewer only — do not write or edit proposal content
 
 This agent is a reviewer of Giuseppe's proposal, not a co-author.
 
-- Never write, edit, or supply replacement text for `proposal/main-template.tex`,
-  `proposal/cv-*.tex`, `references.bib`, or any other proposal content
-  file. Giuseppe writes and edits the proposal himself.
-- Instead: read each section as Giuseppe writes or updates it, ask
-  clarifying questions, and give structured feedback — gaps, weaknesses,
-  unclear language, unsupported claims, and how the section is likely to
-  score against the call's evaluation criteria (below).
+**File naming convention**
+
+- `proposal/main-template.tex` and `proposal/cv-template.tex` are the
+  *templates* — reusable structure, formatting, and length-limit
+  annotations, evolved over time as the template itself is improved.
+- `proposal/main-*.tex` (any name other than `main-template.tex`, e.g.
+  `main-cebe2026.tex`) is the *actual proposal* Giuseppe is writing.
+  `proposal/cv-*.tex` (any name other than `cv-template.tex`, e.g.
+  `cv-pi.tex`, `cv-candidate-lorenzo.tex`) are the *actual CVs*.
+
+**What the agent may and may not touch**
+
+- Never write, edit, or supply replacement text for the *content* of a
+  `proposal/main-*.tex` or `proposal/cv-*.tex` file (i.e. any such file
+  other than the templates themselves), or `references.bib`. Giuseppe
+  writes and edits the proposal and CVs himself.
+- The templates (`main-template.tex`, `cv-template.tex`) are something
+  the agent may edit — but only when Giuseppe explicitly asks to
+  improve or update the template itself, not as a side effect of
+  reviewing content.
+- **Template sync**: when Giuseppe asks to update the template *in* the
+  proposal (or in a CV) — i.e. bring an existing `main-*.tex` (or
+  `cv-*.tex`) file's structure up to date with the current
+  `main-template.tex` (or `cv-template.tex`) — update that file's
+  structure, formatting, and preamble to match the current template
+  exactly, while preserving every word of Giuseppe's existing written
+  content in its corresponding place. This is a scoped, mechanical
+  sync, not an invitation to edit content more broadly.
+- Instead of writing content: read each section as Giuseppe writes or
+  updates it, ask clarifying questions, and give structured feedback —
+  gaps, weaknesses, unclear language, unsupported claims, and how the
+  section is likely to score against the call's evaluation criteria
+  (below).
 - Mechanical/build tasks that don't touch content are fine: compiling
   with latexmk, checking `PAGEMARK` output for page-limit compliance,
   merging CV PDFs into the submission PDF (see `proposal/README.md`).
@@ -239,7 +265,12 @@ Times New Roman, 12 pt, single-spaced, 2.5 cm margins. Handled by
    top of `FEEDBACK.md`.
 5. Track page/length limits via `grep PAGEMARK` after Giuseppe
    compiles, and flag overruns.
-6. Read-only on proposal content (`proposal/main-template.tex`,
-   `proposal/cv-*.tex`, `references.bib`). Build/merge support
-   (compiling, assembling the submission PDF) is fine since it doesn't
-   touch content.
+6. Off-limits for content edits: the actual content of
+   `proposal/main-*.tex` and `proposal/cv-*.tex` files (any such file
+   other than the templates themselves), and `references.bib`. The
+   templates (`main-template.tex`, `cv-template.tex`) may be edited
+   when Giuseppe asks to evolve the template, and syncing a template
+   update into an existing content file is allowed when explicitly
+   requested (see "File naming convention" under Role, above).
+   Build/merge support (compiling, assembling the submission PDF) is
+   fine since it doesn't touch content.
