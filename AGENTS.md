@@ -55,6 +55,35 @@ This agent is a reviewer of Giuseppe's proposal, not a co-author.
   as a suggestion, not an edit applied to the file) — but the default
   mode is questions and critique, not drafting.
 
+### Command triggers
+
+Two standing commands drive most of the agent's work in this repo:
+
+- **"Please update all templates"** → sync every existing content file
+  (`proposal/main-*.tex` and `proposal/cv-*.tex`, i.e. all such files
+  except `main-template.tex`/`cv-template.tex` themselves) to the
+  latest structure, formatting, and preamble of the corresponding
+  template. This is the "template sync" action described above: apply
+  it to every matching file found in `proposal/`, not just one, and
+  preserve every word of Giuseppe's existing written content in its
+  corresponding place in each file.
+- **"Please give me feedback on the application"** → run a full review
+  pass over the whole application, where *application* = the proposal
+  (`proposal/main-*.tex`, excluding the template) plus all CVs
+  (`proposal/cv-*.tex`, excluding the template). Review every section
+  present against the call's required structure, the evaluation
+  criteria, and the knowledge base (below), then append one dated entry
+  to `FEEDBACK.md` per `FEEDBACK.md`'s own format/rules, summarizing
+  the findings across the whole application (not just one file). If a
+  file referenced by the required structure doesn't exist yet (e.g. no
+  `cv-*.tex` for a supervisor), note that as a gap rather than skipping
+  it silently.
+
+These phrases (or close paraphrases of them) are the trigger for these
+specific actions; other requests are handled per the general rules
+above (ask questions, give feedback, don't write proposal content
+unless explicitly asked for a template update).
+
 ### Knowledge base for review
 
 - **Literature**: `proposal/references.bib`. When reviewing "State of
@@ -249,20 +278,26 @@ Times New Roman, 12 pt, single-spaced, 2.5 cm margins. Handled by
 
 ### Process
 
-1. When Giuseppe shares or updates a section, read it alongside the
-   relevant call requirement, `references.bib`, and (where relevant)
-   the CVs.
+See "Command triggers" above for the two standing commands ("please
+update all templates" / "please give me feedback on the application")
+that drive most work here. The steps below apply to both a triggered
+full pass and any ad hoc review request for a single section.
+
+1. When Giuseppe shares, updates, or asks for feedback on a section (or
+   the whole application), read it alongside the relevant call
+   requirement, `references.bib`, and (where relevant) the CVs.
 2. Ask clarifying questions before giving feedback if something is
    ambiguous or missing context.
 3. Give structured feedback per section: strengths, gaps against the
    evaluation criteria, specific questions, and — if useful — a couple
    of concrete suggestions. Leave the actual rewriting to Giuseppe.
 4. Log every review pass to `FEEDBACK.md`: append a new dated entry
-   (never edit or delete a past one) summarizing the points raised for
-   the section(s) reviewed. If a past point has been addressed, append
-   a new entry noting that rather than removing the old one — the file
-   is a running log, not a checklist. See the format and rules at the
-   top of `FEEDBACK.md`.
+   (never edit or delete a past one) summarizing the points raised. On
+   a full "feedback on the application" pass, one entry covering the
+   whole pass is fine — organize it by section/file within the entry.
+   If a past point has been addressed, append a new entry noting that
+   rather than removing the old one — the file is a running log, not a
+   checklist. See the format and rules at the top of `FEEDBACK.md`.
 5. Track page/length limits via `grep PAGEMARK` after Giuseppe
    compiles, and flag overruns.
 6. Off-limits for content edits: the actual content of
