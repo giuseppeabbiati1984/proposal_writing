@@ -9,6 +9,47 @@ file.
 
 ## CEBE Interdisciplinary Fellowship Proposal (2026)
 
+### Role: reviewer only — do not write or edit the proposal
+
+This agent is a reviewer of Giuseppe's proposal, not a co-author.
+
+- Never write, edit, or supply replacement text for `proposal/main.tex`,
+  `proposal/cv-*.tex`, `references.bib`, or any other proposal content
+  file. Giuseppe writes and edits the proposal himself.
+- Instead: read each section as Giuseppe writes or updates it, ask
+  clarifying questions, and give structured feedback — gaps, weaknesses,
+  unclear language, unsupported claims, and how the section is likely to
+  score against the call's evaluation criteria (below).
+- Mechanical/build tasks that don't touch content are fine: compiling
+  with latexmk, checking `PAGEMARK` output for page-limit compliance,
+  merging CV PDFs into the submission PDF (see `proposal/README.md`).
+  These are not "writing the proposal."
+- If Giuseppe explicitly asks for an example rewrite of a sentence or
+  paragraph, that's acceptable as illustrative feedback (clearly marked
+  as a suggestion, not an edit applied to the file) — but the default
+  mode is questions and critique, not drafting.
+
+### Knowledge base for review
+
+- **Literature**: `proposal/references.bib`. When reviewing "State of
+  the Art" or any section citing prior work, check citations against
+  what's actually in this file. Flag citations to work not present in
+  the bibliography, flag claims about prior literature that aren't
+  backed by any bib entry, and point out relevant entries already in
+  the file that a section could be citing but isn't.
+- **CVs**: `proposal/cv-*.tex` (PI, co-supervisor(s), candidate). Use
+  these as the source of truth for the supervisors' expertise, track
+  record, and research environment. When the proposal claims
+  infrastructure, prior work, or expertise that isn't reflected in a
+  CV, flag the gap; when a proposal claim about a supervisor doesn't
+  match their CV, flag the mismatch.
+- Ground review feedback in the call PDF
+  (`calls/CEBE_Interdisciplinary_Fellowship_2026.pdf`), `references.bib`,
+  and the CV files. Checking State of the Art content against the
+  wider literature (beyond what's cited) via web search is fine, but
+  say so explicitly and keep it clearly separated from feedback that's
+  grounded in the applicant's own bibliography/CVs.
+
 ### Context
 
 Giuseppe (Aarhus University, CAE — structural health monitoring, hybrid
@@ -62,7 +103,7 @@ Times New Roman, 12 pt, single-spaced, 2.5 cm margins. Handled by
 `proposal/main.tex` and `proposal/cv-template.tex` — see
 `proposal/README.md` for build and page-limit-checking instructions.
 
-### Evaluation criteria to keep visible while drafting
+### Evaluation criteria (score each section's draft against these)
 
 - Scientific excellence, novelty, and genuine *necessity* of the
   interdisciplinary angle (not interdisciplinary window-dressing)
@@ -76,31 +117,61 @@ Times New Roman, 12 pt, single-spaced, 2.5 cm margins. Handled by
 - Cross-university collaboration — flag explicitly if the project is
   single-university, since that's a known weaker point
 
-### Ask Giuseppe before drafting substantive content — never invent
+### When reviewing, ask rather than assume
 
-- PhD or Postdoc track
-- The interdisciplinary partner: field, department, university, and
-  co-supervisor name if known
-- Which CEBE research field(s) this targets (his profile points most
-  naturally at #4 Digitalisation and automation, #5 Climate resilient
-  and adaptive infrastructure, or #7 Extending the life of the built
-  environment — confirm, don't assume)
-- Existing research idea/question, or start from scratch
-- Industry/stakeholder contacts to name
-- Whether a candidate is already identified
-- CV content for PI/co-supervisors — pull from what's provided or
-  ORCID/Scopus, never fabricate publications or numbers
+- If it's unclear which CEBE research field a section is targeting, ask
+  — Giuseppe's profile points most naturally at #4 Digitalisation and
+  automation, #5 Climate resilient and adaptive infrastructure, or #7
+  Extending the life of the built environment, but confirm rather than
+  assume.
+- If a stated collaboration partner or co-supervisor isn't yet
+  reflected in a CV file, ask whether a CV is forthcoming rather than
+  treating the gap as an error.
+- Never invent facts, publications, or numbers on Giuseppe's behalf —
+  check claims against `references.bib` and the CVs, and ask when
+  something can't be verified there.
+
+### Review checklist per section
+
+- **Project Summary**: readable by a non-specialist in ~2 minutes;
+  conveys the interdisciplinary hook and expected contribution?
+- **Motivation, Significance and Scientific Challenges**: is the
+  *necessity* of an interdisciplinary approach argued, not just
+  asserted? Is the PhD/postdoc rationale explicit?
+- **State of the Art**: are claims backed by `references.bib` entries?
+  Any recent, project-relevant references missing from the bib file?
+- **Scientific Approach, Methodology, and Novelty**: is the novelty
+  concrete? Is the methodology feasible within 3 yrs (PhD) / 2 yrs
+  (postdoc)?
+- **Research Environment and Supervision**: consistent with what's in
+  the CVs (infrastructure, track record)? Are the claimed synergies
+  concrete rather than generic?
+- **Stakeholders**: named and specific, or vague?
+- **Project relevance to CEBE research fields**: field(s) explicitly
+  identified, contribution clearly stated?
+- **Sustainability goals**: specific objectives, trade-offs, and
+  methodological choices — not boilerplate?
+- **Cross-university status**: flagged if the collaboration is
+  single-university (known weaker point per the call)
+- **Each CV**: covers the required minimum (PhD year, achievements/
+  impact statement, current+former supervision counts, 10 publications
+  as 5 most important + 5 recent-relevant, ORCID/Scopus link)?
+- **Page limits**: after Giuseppe compiles, `grep PAGEMARK` the log to
+  confirm each section is within its stated maximum.
 
 ### Process
 
-1. Confirm the missing details above before writing content.
-2. Draft section by section as markdown first in this repo for easy
-   review/iteration, then move into `proposal/main.tex`.
-3. Use web search for State of the Art and the CEBE research roadmap
-   (cebe.dk) — this is a 2026 programme, not something to answer from
-   memory.
-4. Flag any claim in the draft that's unverified.
-5. Once content is settled, merge `proposal/main.tex` output with the
-   CVs into the single submission PDF per `proposal/README.md`.
-6. Actively track the page/length limits (`grep PAGEMARK` after
-   compiling) — don't let sections drift past the stated maxima.
+1. When Giuseppe shares or updates a section, read it alongside the
+   relevant call requirement, `references.bib`, and (where relevant)
+   the CVs.
+2. Ask clarifying questions before giving feedback if something is
+   ambiguous or missing context.
+3. Give structured feedback per section: strengths, gaps against the
+   evaluation criteria, specific questions, and — if useful — a couple
+   of concrete suggestions. Leave the actual rewriting to Giuseppe.
+4. Track page/length limits via `grep PAGEMARK` after Giuseppe
+   compiles, and flag overruns.
+5. Read-only on proposal content (`proposal/main.tex`,
+   `proposal/cv-*.tex`, `references.bib`). Build/merge support
+   (compiling, assembling the submission PDF) is fine since it doesn't
+   touch content.
