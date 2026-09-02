@@ -59,6 +59,38 @@ Interdisciplinary Fellowship Programme. Call reference kept in this repo
 at `calls/CEBE_Interdisciplinary_Fellowship_2026.pdf`. LaTeX template at
 `proposal/` (`main.tex`, `cv-template.tex`, see `proposal/README.md`).
 
+### Team
+
+- **Giuseppe (PI / main applicant)** — Aarhus University, CAE. Structural
+  health monitoring, hybrid testing, system identification, structural
+  dynamics, ML in structural engineering.
+- **Jhonattan G T Martinez Ribon** — Assistant Professor, Aarhus
+  University, Dept. of Civil and Architectural Engineering (Design and
+  Construction group). BIM, Unmanned Aerial Systems, Digital Twins for
+  construction, Lean Construction, CO2/carbon emissions simulation,
+  Construction 4.0. Same university as Giuseppe but a different research
+  group — note for the "cross-university preferred" criterion below.
+  (pure.au.dk/portal/en/persons/jgmartinez%40cae.au.dk)
+- **Carolin Reichherzer, PhD** — Research Scientist / UX Researcher,
+  University of South Australia (also guest lecturer, Adelaide
+  University). Immersive systems (VR/AR), human-AI interaction (incl.
+  Vision Language Models and XR), UX/human-centered design, social
+  presence and body-tracking in immersive environments.
+  (carolinreichherzer.com) International collaborator — not at a Danish
+  university, so doesn't count toward the "cross-university" preference
+  among CEBE partner universities, but fits CEBE's stated welcome of
+  international collaborators and broadens the interdisciplinary reach
+  (e.g. immersive/AI-assisted interfaces for inspection, monitoring, or
+  stakeholder communication around structural health data).
+
+Exact roles (co-supervisor vs. other), and whether the collaboration
+should also add a second Danish CEBE partner university to satisfy the
+"cross-university preferred" criterion, are not yet confirmed — ask
+rather than assume (see below). CVs for Jhonattan and Carolin are not
+yet in the repo; until `proposal/cv-*.tex` exists for each, treat their
+profiles above (from the linked pages) as provisional background only,
+not as a substitute for the CV-grounding rule below.
+
 ### Fixed facts from the call (do not deviate)
 
 - Funder: CEBE / Villum Foundation (2026–2035); partner universities:
@@ -120,10 +152,15 @@ Times New Roman, 12 pt, single-spaced, 2.5 cm margins. Handled by
 ### When reviewing, ask rather than assume
 
 - If it's unclear which CEBE research field a section is targeting, ask
-  — Giuseppe's profile points most naturally at #4 Digitalisation and
-  automation, #5 Climate resilient and adaptive infrastructure, or #7
-  Extending the life of the built environment, but confirm rather than
-  assume.
+  — the combined team (structural health monitoring + digital twins/BIM
+  + immersive/human-AI interaction) points most naturally at #4
+  Digitalisation and automation, possibly alongside #5 Climate resilient
+  and adaptive infrastructure or #7 Extending the life of the built
+  environment, but confirm rather than assume.
+- If it's unclear whether Jhonattan and/or Carolin are joining as
+  co-supervisors, in what capacity, or whether a second Danish CEBE
+  partner university will be added to strengthen the cross-university
+  case, ask rather than assume.
 - If a stated collaboration partner or co-supervisor isn't yet
   reflected in a CV file, ask whether a CV is forthcoming rather than
   treating the gap as an error.
