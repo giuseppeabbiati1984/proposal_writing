@@ -93,12 +93,25 @@ unless explicitly asked for a template update).
   the bibliography, flag claims about prior literature that aren't
   backed by any bib entry, and point out relevant entries already in
   the file that a section could be citing but isn't.
-- **CVs**: `application/cv-*.tex` (PI, co-supervisor(s), candidate). Use
-  these as the source of truth for the supervisors' expertise, track
-  record, and research environment. When the proposal claims
-  infrastructure, prior work, or expertise that isn't reflected in a
-  CV, flag the gap; when a proposal claim about a supervisor doesn't
-  match their CV, flag the mismatch.
+- **CVs**: five are expected in `application/`, one per team member:
+  - `application/cv-pi.tex` — Giuseppe (PI)
+  - `application/cv-cosupervisor-jhonattan.tex` — Jhonattan G T
+    Martinez Ribon
+  - `application/cv-cosupervisor-carolin.tex` — Carolin Reichherzer
+  - `application/cv-cosupervisor-ueli.tex` — Ueli Angst
+  - `application/cv-candidate-lorenzo.tex` — Lorenzo Loyola
+  All five have been instantiated from `cv-template.tex` with name/
+  title/affiliation pre-filled from "Team" below where known;
+  everything else (PhD year, achievements, supervision counts,
+  publications, ORCID/Scopus) is still a placeholder for the relevant
+  person to fill in. Use the completed fields as the source of truth
+  for the supervisors' expertise, track record, and research
+  environment. When the proposal claims infrastructure, prior work, or
+  expertise that isn't reflected in a CV, flag the gap; when a proposal
+  claim about a supervisor doesn't match their CV, flag the mismatch;
+  if one of the five files above still has only placeholder content
+  when a full application review is requested, flag it by name rather
+  than generically.
 - **RF7 research roadmap**:
   `roadmap/RF7_Specific_Chapter_in_Research_Roadmap_v6.pdf` — CEBE's own
   roadmap chapter for research field #7 (Extending the life of the
@@ -107,10 +120,10 @@ unless explicitly asked for a template update).
   Predicting future use and load scenarios, WP7.3 Engineering solutions
   for life extension, WP7.4 Risk-based decision support systems), named
   research gaps, interfaces with RF3/RF4/RF5, and a table of concrete
-  output/outcome/impact targets already planned for RF7. Whenever the
-  application claims field #7 (or discusses SHM, corrosion/deterioration,
-  life extension, or risk-based assessment regardless of declared
-  field), check consistency against this document:
+  output/outcome/impact targets already planned for RF7. Since this
+  application targets field #7 (see "Fixed facts from the call"),
+  always check consistency against this document as standard
+  practice — not conditional on what a section happens to claim:
   - Does "Project relevance to CEBE research fields" map explicitly to
     one or more of WP7.1–7.4, rather than gesturing at "field 7" in
     general?
@@ -138,12 +151,16 @@ unless explicitly asked for a template update).
 
 Giuseppe (Aarhus University, CAE — structural health monitoring, hybrid
 testing, system identification, structural dynamics, ML in structural
-engineering) is preparing a PhD or Postdoc proposal for the CEBE
-Interdisciplinary Fellowship Programme. Call reference kept in this repo
-at `calls/CEBE_Interdisciplinary_Fellowship_2026.pdf`. LaTeX templates at
-`templates/` (`main-template.tex`, `cv-template.tex`, see
-`templates/README.md`). The actual proposal and CVs are written in
-`application/` (see `application/README.md`).
+engineering) is preparing a **PhD** proposal (candidate: Lorenzo Loyola)
+for the CEBE Interdisciplinary Fellowship Programme, targeting **CEBE
+research field #7 (Extending the life of the built environment)**. Call
+reference kept in this repo at
+`calls/CEBE_Interdisciplinary_Fellowship_2026.pdf`; the RF7 roadmap at
+`roadmap/RF7_Specific_Chapter_in_Research_Roadmap_v6.pdf` is the
+authoritative reference for that field (see "Knowledge base for
+review"). LaTeX templates at `templates/` (`main-template.tex`,
+`cv-template.tex`, see `templates/README.md`). The actual proposal and
+CVs are written in `application/` (see `application/README.md`).
 
 ### Team
 
@@ -213,16 +230,23 @@ not as a substitute for the CV-grounding rule below.
 
 ### Fixed facts from the call (do not deviate)
 
+- **This application targets a PhD scholarship** (candidate: Lorenzo
+  Loyola) — not a Postdoc. Only the PhD figures below apply; the
+  Postdoc figures are kept for reference/context only.
 - Funder: CEBE / Villum Foundation (2026–2035); partner universities:
   Aalborg, Aarhus, SDU, DTU
-- 7 CEBE research fields — the project must map explicitly to 1–2 of them
+- 7 CEBE research fields — **this project targets field #7 (Extending
+  the life of the built environment)**, see "Team" and "Knowledge base
+  for review" below
 - Must be interdisciplinary: ≥2 research groups, ≥1 at a CEBE partner
   university (that PI is the main applicant); cross-university
   collaboration is explicitly preferred
-- PhD: max 3 yrs full-time; project supplement DKK 750,000 + PhD
-  education rate DKK 240,000 + consumables up to DKK 100,000
-- Postdoc: max 2 yrs full-time; project supplement DKK 500,000 +
+- PhD (applies to this application): max 3 yrs full-time; project
+  supplement DKK 750,000 + PhD education rate DKK 240,000 +
   consumables up to DKK 100,000
+- Postdoc (not applicable to this application, kept for reference):
+  max 2 yrs full-time; project supplement DKK 500,000 + consumables up
+  to DKK 100,000
 - Time split ~equally between participating research groups
 - Call closes 30 Sept 2026; decision 1 Dec 2026; project must start by
   30 May 2027
@@ -245,9 +269,10 @@ not as a substitute for the CV-grounding rule below.
       - Stakeholders involved in the project
    3. Project relevance to CEBE research fields — max 1/2 page
    4. Sustainability goals & relation to CEBE vision — max 1/2 page
-3. CV of PI (max 2 pages)
-4. CV of co-supervisor(s) (max 2 pages each)
-5. CV of named candidate, if any (max 2 pages)
+3. CV of PI — Giuseppe (max 2 pages)
+4. CV of each co-supervisor — Jhonattan Martinez Ribon, Carolin
+   Reichherzer, Ueli Angst (max 2 pages each)
+5. CV of named candidate — Lorenzo Loyola (max 2 pages)
 
 ### Formatting
 
@@ -271,15 +296,17 @@ Times New Roman, 12 pt, single-spaced, 2.5 cm margins. Handled by
 
 ### When reviewing, ask rather than assume
 
-- If it's unclear which CEBE research field a section is targeting, ask
-  — the team's combined expertise (structural health monitoring +
-  digital twins/BIM/automation + reinforced concrete durability/
-  corrosion + immersive/human-AI interaction) points most naturally at
-  #7 Extending the life of the built environment and/or #4
-  Digitalisation and automation, possibly alongside #1 Assessing and
-  measuring environmental sustainability or #3 Low carbon and robust
-  construction materials (via Ueli Angst's durability work), but confirm
-  rather than assume.
+- **CEBE research field is fixed: #7, Extending the life of the built
+  environment** — confirmed by Giuseppe, grounded in the RF7 roadmap
+  (`roadmap/RF7_Specific_Chapter_in_Research_Roadmap_v6.pdf`, see
+  "Knowledge base for review"). The team's other strengths (digital
+  twins/BIM/automation via Jhonattan, reinforced concrete durability
+  via Ueli, immersive/human-AI interaction via Carolin) support #7
+  directly and through its interfaces with #4 Digitalisation and
+  automation and #3 Low carbon and robust construction materials, but
+  #7 stays the declared primary field — ask if a section drifts toward
+  treating a different field as primary, or claims field #7 relevance
+  without anything traceable to the roadmap.
 - Team and roles are now fixed: Lorenzo Loyola is the PhD candidate;
   Giuseppe (PI) and Jhonattan Martinez Ribon are the Aarhus University
   supervisors; Carolin Reichherzer and Ueli Angst are the ETH Zurich
@@ -309,13 +336,13 @@ Times New Roman, 12 pt, single-spaced, 2.5 cm margins. Handled by
   the CVs (infrastructure, track record)? Are the claimed synergies
   concrete rather than generic?
 - **Stakeholders**: named and specific, or vague?
-- **Project relevance to CEBE research fields**: field(s) explicitly
-  identified, contribution clearly stated? If field #7 is claimed (or
-  the content touches SHM, corrosion/deterioration, life extension, or
-  risk-based assessment), run the RF7 roadmap consistency check
-  described under "Knowledge base for review" — explicit WP7.1–7.4
-  mapping, additive vs. duplicative against the roadmap's own targets,
-  RF3/RF4/RF5 interface consistency, and stakeholder alignment.
+- **Project relevance to CEBE research fields**: field #7 explicitly
+  identified as the primary field, contribution clearly stated? Since
+  this application targets field #7, always run the RF7 roadmap
+  consistency check described under "Knowledge base for review" —
+  explicit WP7.1–7.4 mapping, additive vs. duplicative against the
+  roadmap's own targets, RF3/RF4/RF5 interface consistency, and
+  stakeholder alignment.
 - **Sustainability goals**: specific objectives, trade-offs, and
   methodological choices — not boilerplate?
 - **Cross-university status**: flagged if the collaboration is

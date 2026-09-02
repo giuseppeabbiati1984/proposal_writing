@@ -1,0 +1,106 @@
+% ==============================================================================
+% CEBE Interdisciplinary Fellowship -- CV template
+%
+% Max 2 pages per person. Copy this file once per applicant, e.g.:
+%   cv-pi.tex, cv-cosupervisor1.tex, cv-cosupervisor2.tex, cv-candidate.tex
+% and compile each separately, then merge with main.tex into the single
+% submission PDF (see README.md).
+%
+% Required minimum content per the call:
+%   - Name, title and affiliation
+%   - PhD year
+%   - Short statement on previous research achievements and relevant
+%     impacts (e.g. policy, industrial, or public arenas)
+%   - Number (not a name list) of current and former PhD students,
+%     postdocs, and master's students
+%   - 10 publications: 5 most important (last 15 years) + 5 recent
+%     project-relevant ones (last 5 years)
+%   - Link to Scopus profile or ORCID
+% ==============================================================================
+
+% ==============================================================================
+% Instantiated from templates/cv-template.tex on 2026-09-02 at Giuseppe's
+% request. Name/title/affiliation below are pre-filled from AGENTS.md's
+% "Team" section where known; everything else (PhD year, achievements,
+% supervision counts, publications, ORCID/Scopus) is still a placeholder.
+% ==============================================================================
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+\usepackage{setspace}
+\singlespacing
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+
+\newcommand{\pagemark}[1]{\typeout{PAGEMARK: #1 -- page \thepage}}
+
+% Expected-length annotation (matches proposal/main-template.tex). Set
+% \templatenotesfalse to hide before the final submission build.
+\newif\iftemplatenotes
+\templatenotestrue
+\newcommand{\lengthnote}[1]{%
+  \iftemplatenotes
+    {\small\itshape\color{gray!70!black} [Target length: #1]}\par\vspace{4pt}
+  \fi
+}
+
+\pagenumbering{gobble} % CVs typically don't need page numbers in a merged submission; remove if you want them
+
+\begin{document}
+\pagemark{CV Lorenzo Loyola (candidate) -- start}
+\lengthnote{max 2 pages per person (per the call)}
+
+\begin{center}
+{\Large\bfseries Lorenzo Loyola}\par\vspace{2pt}
+Research Assistant (prospective PhD candidate)\par
+Dept. of Civil and Architectural Engineering (Structural Engineering group), Aarhus University
+\end{center}
+
+\vspace{0.5cm}
+\noindent\textbf{PhD year:} [Year]
+
+\vspace{0.3cm}
+% Known profile page (not ORCID/Scopus): https://pure.au.dk/portal/en/persons/lorenzo-loyola
+\noindent\textbf{ORCID / Scopus:} \url{[link]}
+
+\vspace{0.5cm}
+\noindent\textbf{Research achievements and impact}
+
+[Short statement on previous research achievements and relevant impacts,
+including e.g. policy, industrial, or public-arena impact. A few
+sentences, not a full narrative CV.]
+
+\vspace{0.5cm}
+\noindent\textbf{Supervision record}
+
+Current: [N] PhD students, [N] postdocs, [N] master's students.\\
+Former: [N] PhD students, [N] postdocs, [N] master's students.
+
+\vspace{0.5cm}
+\noindent\textbf{Selected publications}
+
+\noindent\textit{Five most important (last 15 years):}
+\begin{enumerate}[leftmargin=1.2cm]
+  \item [Author list, year, title, venue.]
+  \item [Author list, year, title, venue.]
+  \item [Author list, year, title, venue.]
+  \item [Author list, year, title, venue.]
+  \item [Author list, year, title, venue.]
+\end{enumerate}
+
+\noindent\textit{Five recent, project-relevant (last 5 years):}
+\begin{enumerate}[leftmargin=1.2cm]
+  \item [Author list, year, title, venue.]
+  \item [Author list, year, title, venue.]
+  \item [Author list, year, title, venue.]
+  \item [Author list, year, title, venue.]
+  \item [Author list, year, title, venue.]
+\end{enumerate}
+
+\pagemark{CV Lorenzo Loyola (candidate) -- end}
+\end{document}
