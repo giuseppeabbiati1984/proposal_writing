@@ -1,0 +1,152 @@
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+build/
+dist/
+sdist/
+wheels/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+var/
+*.egg-info/
+*.egg
+.installed.cfg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# Testing / coverage / linting
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+*.cover
+.hypothesis/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.ruff_cache/
+.pyre/
+.pytype/
+
+# Jupyter / IPython
+.ipynb_checkpoints/
+profile_default/
+ipython_config.py
+
+# Type stubs / caches
+cython_debug/
+
+# ---------------------------------------------------------------------------
+# LaTeX
+# ---------------------------------------------------------------------------
+# Core auxiliary files
+*.aux
+*.lof
+*.lot
+*.log
+*.toc
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.synctex.gz(busy)
+*.pdfsync
+*.dvi
+*.xdv
+
+# Bibliography
+*.bbl
+*.bcf
+*.blg
+*.brf
+*.run.xml
+*-blx.bib
+*.bib.bak
+
+# Index / glossary / nomenclature
+*.idx
+*.ilg
+*.ind
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.ist
+*.nlo
+*.nls
+*.slg
+*.slo
+*.sls
+
+# Beamer / hyperref / algorithms
+*.nav
+*.snm
+*.vrb
+*.loa
+*.lol
+
+# todonotes, changes, minted, pythontex, etc.
+*.tdo
+*.soc
+_minted*/
+*.pyg
+pythontex-files-*/
+*.pytxcode
+
+# latexmk / build directories
+*.figlist
+*.makefile
+*.fdb_latexmk
+*.auxlock
+build/
+out/
+
+# Editor / tool leftovers
+*.bak
+*.sav
+*.swp
+*~
+
+# Generated PDFs — uncomment if compiled output should NOT be versioned.
+# Many proposal repos deliberately commit the final PDF, so this is left off.
+# *.pdf
+
+# ---------------------------------------------------------------------------
+# OS / editor
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.iml
+
+# ---------------------------------------------------------------------------
+# Secrets / local config
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
