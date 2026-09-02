@@ -61,6 +61,15 @@ at `calls/CEBE_Interdisciplinary_Fellowship_2026.pdf`. LaTeX template at
 
 ### Team
 
+**PhD candidate:** Lorenzo Loyola — Research Assistant, Dept. of Civil
+and Architectural Engineering (Structural Engineering group), Aarhus
+University. Already working in structural engineering, automation,
+structural health monitoring, BIM, digital twin technology, and CO2
+optimization in construction — directly continuous with the proposed
+project, which strengthens the "why this candidate" argument.
+(pure.au.dk/portal/en/persons/lorenzo-loyola)
+
+**Aarhus University supervisors:**
 - **Giuseppe (PI / main applicant)** — Aarhus University, CAE. Structural
   health monitoring, hybrid testing, system identification, structural
   dynamics, ML in structural engineering.
@@ -69,26 +78,38 @@ at `calls/CEBE_Interdisciplinary_Fellowship_2026.pdf`. LaTeX template at
   Construction group). BIM, Unmanned Aerial Systems, Digital Twins for
   construction, Lean Construction, CO2/carbon emissions simulation,
   Construction 4.0. Same university as Giuseppe but a different research
-  group — note for the "cross-university preferred" criterion below.
-  (pure.au.dk/portal/en/persons/jgmartinez%40cae.au.dk)
-- **Carolin Reichherzer, PhD** — Research Scientist / UX Researcher,
-  University of South Australia (also guest lecturer, Adelaide
-  University). Immersive systems (VR/AR), human-AI interaction (incl.
-  Vision Language Models and XR), UX/human-centered design, social
-  presence and body-tracking in immersive environments.
-  (carolinreichherzer.com) International collaborator — not at a Danish
-  university, so doesn't count toward the "cross-university" preference
-  among CEBE partner universities, but fits CEBE's stated welcome of
-  international collaborators and broadens the interdisciplinary reach
-  (e.g. immersive/AI-assisted interfaces for inspection, monitoring, or
-  stakeholder communication around structural health data).
+  group. (pure.au.dk/portal/en/persons/jgmartinez%40cae.au.dk)
 
-Exact roles (co-supervisor vs. other), and whether the collaboration
-should also add a second Danish CEBE partner university to satisfy the
-"cross-university preferred" criterion, are not yet confirmed — ask
-rather than assume (see below). CVs for Jhonattan and Carolin are not
-yet in the repo; until `proposal/cv-*.tex` exists for each, treat their
-profiles above (from the linked pages) as provisional background only,
+**ETH Zurich supervisors:**
+- **Carolin Reichherzer, PhD** — immersive systems (VR/AR), human-AI
+  interaction (incl. Vision Language Models and XR), UX/human-centered
+  design, social presence and body-tracking in immersive environments.
+  Her personal site (carolinreichherzer.com) lists University of South
+  Australia; a web search also surfaced ties to ETH Zurich's Design++
+  programme (XR in AEC). Giuseppe has confirmed her role here is as the
+  ETH Zurich co-supervisor — treat that as settled, but her exact ETH
+  Zurich title/affiliation line for the CV is still to be confirmed with
+  her directly, don't guess it.
+- **Prof. Dr. Ueli Angst** — Professor, Durability of Engineering
+  Materials Lab, Institute for Building Materials (IfB), Dept. of Civil,
+  Environmental and Geomatic Engineering (D-BAUG), ETH Zurich. Corrosion
+  and durability of reinforced concrete, including under climate change
+  — strong fit for CEBE fields on environmental sustainability
+  assessment, low-carbon/robust materials, and extending building
+  service life. (ifb.ethz.ch/durability/people/uangst.html)
+
+Because the second research group is at ETH Zurich (not Aarhus), this
+project is genuinely cross-university/cross-border — a strength for the
+"cross-university preferred" criterion, not a gap (the Giuseppe+Jhonattan
+pairing alone, both at Aarhus, would not have been). ETH Zurich isn't
+one of the four CEBE partner universities, which is fine: the call only
+requires the PI's institution (Giuseppe, Aarhus) to be a CEBE partner —
+other research groups can be elsewhere, consistent with CEBE explicitly
+welcoming international collaborators.
+
+CVs for Jhonattan, Carolin, Ueli, and Lorenzo are not yet in the repo;
+until `proposal/cv-*.tex` exists for each, treat the profiles above
+(from the linked pages and web search) as provisional background only,
 not as a substitute for the CV-grounding rule below.
 
 ### Fixed facts from the call (do not deviate)
@@ -152,15 +173,19 @@ Times New Roman, 12 pt, single-spaced, 2.5 cm margins. Handled by
 ### When reviewing, ask rather than assume
 
 - If it's unclear which CEBE research field a section is targeting, ask
-  — the combined team (structural health monitoring + digital twins/BIM
-  + immersive/human-AI interaction) points most naturally at #4
-  Digitalisation and automation, possibly alongside #5 Climate resilient
-  and adaptive infrastructure or #7 Extending the life of the built
-  environment, but confirm rather than assume.
-- If it's unclear whether Jhonattan and/or Carolin are joining as
-  co-supervisors, in what capacity, or whether a second Danish CEBE
-  partner university will be added to strengthen the cross-university
-  case, ask rather than assume.
+  — the team's combined expertise (structural health monitoring +
+  digital twins/BIM/automation + reinforced concrete durability/
+  corrosion + immersive/human-AI interaction) points most naturally at
+  #7 Extending the life of the built environment and/or #4
+  Digitalisation and automation, possibly alongside #1 Assessing and
+  measuring environmental sustainability or #3 Low carbon and robust
+  construction materials (via Ueli Angst's durability work), but confirm
+  rather than assume.
+- Team and roles are now fixed: Lorenzo Loyola is the PhD candidate;
+  Giuseppe (PI) and Jhonattan Martinez Ribon are the Aarhus University
+  supervisors; Carolin Reichherzer and Ueli Angst are the ETH Zurich
+  supervisors. Still ask if a section's description of any of their
+  roles or contributions is inconsistent with this.
 - If a stated collaboration partner or co-supervisor isn't yet
   reflected in a CV file, ask whether a CV is forthcoming rather than
   treating the gap as an error.
