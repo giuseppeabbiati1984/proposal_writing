@@ -5,14 +5,14 @@ Fellowship Programme call (PhD/Postdoc), call closes **30 Sept 2026**.
 
 ## Files
 
-- `main.tex` — the project proposal itself: frontpage, table of contents,
+- `main-template.tex` — the project proposal itself: frontpage, table of contents,
   Project Summary, Project Description (with the exact required
   subheadings), Project relevance to CEBE research fields, Sustainability
   goals.
 - `cv-template.tex` — a single CV template. Copy it once per person
   (`cv-pi.tex`, `cv-cosupervisor1.tex`, `cv-candidate.tex`, ...) and fill
   each in separately — max 2 pages per the call.
-- `references.bib` — bibliography for citations used in `main.tex`
+- `references.bib` — bibliography for citations used in `main-template.tex`
   (via natbib: `\citep{key}` / `\citet{key}`).
 
 ## Formatting compliance
@@ -25,27 +25,34 @@ Fellowship Programme call (PhD/Postdoc), call closes **30 Sept 2026**.
   want the literal Times New Roman TTF (available on this Windows
   machine), compile with **XeLaTeX** instead and swap in `fontspec` +
   `\setmainfont{Times New Roman}` — see the comment block at the top of
-  `main.tex`.
+  `main-template.tex`.
 
 ## Building
 
 With `latexmk` (recommended — handles the bibtex re-run automatically):
 
 ```
-latexmk -pdf main.tex
+latexmk -pdf main-template.tex
 latexmk -pdf cv-template.tex   # repeat per CV copy
 ```
 
 Or manually:
 
 ```
-pdflatex main.tex
-bibtex main
-pdflatex main.tex
-pdflatex main.tex
+pdflatex main-template.tex
+bibtex main-template
+pdflatex main-template.tex
+pdflatex main-template.tex
 ```
 
 ## Checking page limits
+
+Each page-limited section also shows a small `[Target length: ...]` note
+in the compiled PDF itself, right under its heading, so the limit is
+visible while drafting. These notes are template scaffolding, not
+proposal content — before the final submission build, hide them by
+setting `\templatenotesfalse` near the top of each `.tex` file's
+preamble (default is `\templatenotestrue`).
 
 The call enforces hard maxima per section:
 
@@ -57,7 +64,7 @@ The call enforces hard maxima per section:
 | Sustainability goals | 1/2 page |
 | Each CV | 2 pages |
 
-Each section in `main.tex` and `cv-template.tex` is bracketed by a
+Each section in `main-template.tex` and `cv-template.tex` is bracketed by a
 `\pagemark{...}` marker that prints to the compile log. After building,
 check where each section starts/ends:
 

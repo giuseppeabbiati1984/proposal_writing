@@ -13,7 +13,7 @@ file.
 
 This agent is a reviewer of Giuseppe's proposal, not a co-author.
 
-- Never write, edit, or supply replacement text for `proposal/main.tex`,
+- Never write, edit, or supply replacement text for `proposal/main-template.tex`,
   `proposal/cv-*.tex`, `references.bib`, or any other proposal content
   file. Giuseppe writes and edits the proposal himself.
 - Instead: read each section as Giuseppe writes or updates it, ask
@@ -57,7 +57,7 @@ testing, system identification, structural dynamics, ML in structural
 engineering) is preparing a PhD or Postdoc proposal for the CEBE
 Interdisciplinary Fellowship Programme. Call reference kept in this repo
 at `calls/CEBE_Interdisciplinary_Fellowship_2026.pdf`. LaTeX template at
-`proposal/` (`main.tex`, `cv-template.tex`, see `proposal/README.md`).
+`proposal/` (`main-template.tex`, `cv-template.tex`, see `proposal/README.md`).
 
 ### Team
 
@@ -153,7 +153,7 @@ not as a substitute for the CV-grounding rule below.
 ### Formatting
 
 Times New Roman, 12 pt, single-spaced, 2.5 cm margins. Handled by
-`proposal/main.tex` and `proposal/cv-template.tex` — see
+`proposal/main-template.tex` and `proposal/cv-template.tex` — see
 `proposal/README.md` for build and page-limit-checking instructions.
 
 ### Evaluation criteria (score each section's draft against these)
@@ -239,7 +239,7 @@ Times New Roman, 12 pt, single-spaced, 2.5 cm margins. Handled by
    top of `FEEDBACK.md`.
 5. Track page/length limits via `grep PAGEMARK` after Giuseppe
    compiles, and flag overruns.
-6. Read-only on proposal content (`proposal/main.tex`,
+6. Read-only on proposal content (`proposal/main-template.tex`,
    `proposal/cv-*.tex`, `references.bib`). Build/merge support
    (compiling, assembling the submission PDF) is fine since it doesn't
    touch content.

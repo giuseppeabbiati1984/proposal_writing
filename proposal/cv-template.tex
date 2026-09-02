@@ -27,14 +27,26 @@
 \usepackage{setspace}
 \singlespacing
 \usepackage{enumitem}
+\usepackage{xcolor}
 \usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
 
 \newcommand{\pagemark}[1]{\typeout{PAGEMARK: #1 -- page \thepage}}
+
+% Expected-length annotation (matches proposal/main-template.tex). Set
+% \templatenotesfalse to hide before the final submission build.
+\newif\iftemplatenotes
+\templatenotestrue
+\newcommand{\lengthnote}[1]{%
+  \iftemplatenotes
+    {\small\itshape\color{gray!70!black} [Target length: #1]}\par\vspace{4pt}
+  \fi
+}
 
 \pagenumbering{gobble} % CVs typically don't need page numbers in a merged submission; remove if you want them
 
 \begin{document}
 \pagemark{CV [PERSON] -- start}
+\lengthnote{max 2 pages per person (per the call)}
 
 \begin{center}
 {\Large\bfseries [Full Name]}\par\vspace{2pt}

@@ -41,6 +41,7 @@
 \usepackage{enumitem}      % tighter, controllable lists
 \usepackage{booktabs}      % clean tables (applicant list)
 \usepackage[numbers,sort&compress]{natbib}  % references; bibliography style set below
+\usepackage{xcolor}
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref} % load near-last
 
 % ---- Section numbering to mirror the call's own numbering (1, 2, 2.1 ... , 3, 4) ----
@@ -56,6 +57,19 @@
 %   Project relevance to CEBE     max 1/2 page
 %   Sustainability goals          max 1/2 page
 \newcommand{\pagemark}[1]{\typeout{PAGEMARK: #1 -- page \thepage}}
+
+% ---- Expected-length annotations -------------------------------------------
+% Prints the call's stated page limit right under each section heading, so
+% it stays visible while drafting. Set \templatenotesfalse (just below) to
+% hide these before the final submission build -- they are not part of the
+% proposal content.
+\newif\iftemplatenotes
+\templatenotestrue
+\newcommand{\lengthnote}[1]{%
+  \iftemplatenotes
+    {\small\itshape\color{gray!70!black} [Target length: #1]}\par\vspace{4pt}
+  \fi
+}
 
 \begin{document}
 
@@ -106,6 +120,7 @@ Candidate (if named) & [Name or ``to be recruited''] & [Affiliation] \\
 % ==============================================================================
 \pagemark{Project Summary -- start}
 \section{Project Summary}
+\lengthnote{max 1/2 page (per the call)}
 
 [Half a page, no more. One paragraph that a non-specialist reviewer can
 read in two minutes: the problem, the interdisciplinary angle, the
@@ -119,6 +134,7 @@ approach, and the expected contribution.]
 % ==============================================================================
 \pagemark{Project Description -- start}
 \section{Project Description}
+\lengthnote{max 4 pages total for this section (all subsections combined), excluding references (per the call)}
 
 \subsection{Motivation, Significance and Scientific Challenges}
 
@@ -167,6 +183,7 @@ in-kind contribution, planned dissemination.]
 % ==============================================================================
 \pagemark{CEBE relevance -- start}
 \section{Project relevance to CEBE research fields}
+\lengthnote{max 1/2 page (per the call)}
 
 [Identify the relevant CEBE research field(s) from the list of seven
 (see www.cebe.dk), and describe the expected contribution to that
@@ -180,6 +197,7 @@ all seven.]
 % ==============================================================================
 \pagemark{Sustainability goals -- start}
 \section{Sustainability goals of the project and relation to the CEBE program vision}
+\lengthnote{max 1/2 page (per the call)}
 
 [Specific sustainability objectives, including any sustainability-related
 trade-offs the project may involve.]
