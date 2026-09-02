@@ -150,3 +150,6 @@ Desktop.ini
 .env
 .env.*
 !.env.example
+
+# Local agent config (contains a GitHub token) — never commit
+AGENTS.md
