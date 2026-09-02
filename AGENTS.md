@@ -15,20 +15,20 @@ This agent is a reviewer of Giuseppe's proposal, not a co-author.
 
 **File naming convention**
 
-- `proposal/main-template.tex` and `proposal/cv-template.tex` are the
+- `templates/main-template.tex` and `templates/cv-template.tex` are the
   *templates* — reusable structure, formatting, and length-limit
   annotations, evolved over time as the template itself is improved.
-- `proposal/main-*.tex` (any name other than `main-template.tex`, e.g.
+- `application/main-*.tex` (any name other than `main-template.tex`, e.g.
   `main-cebe2026.tex`) is the *actual proposal* Giuseppe is writing.
-  `proposal/cv-*.tex` (any name other than `cv-template.tex`, e.g.
+  `application/cv-*.tex` (any name other than `cv-template.tex`, e.g.
   `cv-pi.tex`, `cv-candidate-lorenzo.tex`) are the *actual CVs*.
 
 **What the agent may and may not touch**
 
 - Never write, edit, or supply replacement text for the *content* of a
-  `proposal/main-*.tex` or `proposal/cv-*.tex` file (i.e. any such file
-  other than the templates themselves), or `references.bib`. Giuseppe
-  writes and edits the proposal and CVs himself.
+  `application/main-*.tex` or `application/cv-*.tex` file (i.e. any such
+  file other than the templates themselves), or `application/references.bib`.
+  Giuseppe writes and edits the proposal and CVs himself.
 - The templates (`main-template.tex`, `cv-template.tex`) are something
   the agent may edit — but only when Giuseppe explicitly asks to
   improve or update the template itself, not as a side effect of
@@ -48,7 +48,7 @@ This agent is a reviewer of Giuseppe's proposal, not a co-author.
   (below).
 - Mechanical/build tasks that don't touch content are fine: compiling
   with latexmk, checking `PAGEMARK` output for page-limit compliance,
-  merging CV PDFs into the submission PDF (see `proposal/README.md`).
+  merging CV PDFs into the submission PDF (see `application/README.md`).
   These are not "writing the proposal."
 - If Giuseppe explicitly asks for an example rewrite of a sentence or
   paragraph, that's acceptable as illustrative feedback (clearly marked
@@ -60,17 +60,17 @@ This agent is a reviewer of Giuseppe's proposal, not a co-author.
 Two standing commands drive most of the agent's work in this repo:
 
 - **"Please update all templates"** → sync every existing content file
-  (`proposal/main-*.tex` and `proposal/cv-*.tex`, i.e. all such files
+  (`application/main-*.tex` and `application/cv-*.tex`, i.e. all such files
   except `main-template.tex`/`cv-template.tex` themselves) to the
   latest structure, formatting, and preamble of the corresponding
   template. This is the "template sync" action described above: apply
-  it to every matching file found in `proposal/`, not just one, and
+  it to every matching file found in `application/`, not just one, and
   preserve every word of Giuseppe's existing written content in its
   corresponding place in each file.
 - **"Please give me feedback on the application"** → run a full review
   pass over the whole application, where *application* = the proposal
-  (`proposal/main-*.tex`, excluding the template) plus all CVs
-  (`proposal/cv-*.tex`, excluding the template). Review every section
+  (`application/main-*.tex`, excluding the template) plus all CVs
+  (`application/cv-*.tex`, excluding the template). Review every section
   present against the call's required structure, the evaluation
   criteria, and the knowledge base (below), then append one dated entry
   to `FEEDBACK.md` per `FEEDBACK.md`'s own format/rules, summarizing
@@ -86,21 +86,21 @@ unless explicitly asked for a template update).
 
 ### Knowledge base for review
 
-- **Literature**: `proposal/references.bib`. When reviewing "State of
+- **Literature**: `application/references.bib`. When reviewing "State of
   the Art" or any section citing prior work, check citations against
   what's actually in this file. Flag citations to work not present in
   the bibliography, flag claims about prior literature that aren't
   backed by any bib entry, and point out relevant entries already in
   the file that a section could be citing but isn't.
-- **CVs**: `proposal/cv-*.tex` (PI, co-supervisor(s), candidate). Use
+- **CVs**: `application/cv-*.tex` (PI, co-supervisor(s), candidate). Use
   these as the source of truth for the supervisors' expertise, track
   record, and research environment. When the proposal claims
   infrastructure, prior work, or expertise that isn't reflected in a
   CV, flag the gap; when a proposal claim about a supervisor doesn't
   match their CV, flag the mismatch.
 - Ground review feedback in the call PDF
-  (`calls/CEBE_Interdisciplinary_Fellowship_2026.pdf`), `references.bib`,
-  and the CV files. Checking State of the Art content against the
+  (`calls/CEBE_Interdisciplinary_Fellowship_2026.pdf`),
+  `application/references.bib`, and the CV files. Checking State of the Art content against the
   wider literature (beyond what's cited) via web search is fine, but
   say so explicitly and keep it clearly separated from feedback that's
   grounded in the applicant's own bibliography/CVs.
@@ -111,8 +111,10 @@ Giuseppe (Aarhus University, CAE — structural health monitoring, hybrid
 testing, system identification, structural dynamics, ML in structural
 engineering) is preparing a PhD or Postdoc proposal for the CEBE
 Interdisciplinary Fellowship Programme. Call reference kept in this repo
-at `calls/CEBE_Interdisciplinary_Fellowship_2026.pdf`. LaTeX template at
-`proposal/` (`main-template.tex`, `cv-template.tex`, see `proposal/README.md`).
+at `calls/CEBE_Interdisciplinary_Fellowship_2026.pdf`. LaTeX templates at
+`templates/` (`main-template.tex`, `cv-template.tex`, see
+`templates/README.md`). The actual proposal and CVs are written in
+`application/` (see `application/README.md`).
 
 ### Team
 
@@ -163,7 +165,7 @@ other research groups can be elsewhere, consistent with CEBE explicitly
 welcoming international collaborators.
 
 CVs for Jhonattan, Carolin, Ueli, and Lorenzo are not yet in the repo;
-until `proposal/cv-*.tex` exists for each, treat the profiles above
+until `application/cv-*.tex` exists for each, treat the profiles above
 (from the linked pages and web search) as provisional background only,
 not as a substitute for the CV-grounding rule below.
 
@@ -208,8 +210,8 @@ not as a substitute for the CV-grounding rule below.
 ### Formatting
 
 Times New Roman, 12 pt, single-spaced, 2.5 cm margins. Handled by
-`proposal/main-template.tex` and `proposal/cv-template.tex` — see
-`proposal/README.md` for build and page-limit-checking instructions.
+`templates/main-template.tex` and `templates/cv-template.tex` — see
+`templates/README.md` for build and page-limit-checking instructions.
 
 ### Evaluation criteria (score each section's draft against these)
 
@@ -245,8 +247,8 @@ Times New Roman, 12 pt, single-spaced, 2.5 cm margins. Handled by
   reflected in a CV file, ask whether a CV is forthcoming rather than
   treating the gap as an error.
 - Never invent facts, publications, or numbers on Giuseppe's behalf —
-  check claims against `references.bib` and the CVs, and ask when
-  something can't be verified there.
+  check claims against `application/references.bib` and the CVs, and
+  ask when something can't be verified there.
 
 ### Review checklist per section
 
@@ -255,8 +257,9 @@ Times New Roman, 12 pt, single-spaced, 2.5 cm margins. Handled by
 - **Motivation, Significance and Scientific Challenges**: is the
   *necessity* of an interdisciplinary approach argued, not just
   asserted? Is the PhD/postdoc rationale explicit?
-- **State of the Art**: are claims backed by `references.bib` entries?
-  Any recent, project-relevant references missing from the bib file?
+- **State of the Art**: are claims backed by `application/references.bib`
+  entries? Any recent, project-relevant references missing from the bib
+  file?
 - **Scientific Approach, Methodology, and Novelty**: is the novelty
   concrete? Is the methodology feasible within 3 yrs (PhD) / 2 yrs
   (postdoc)?
@@ -285,7 +288,7 @@ full pass and any ad hoc review request for a single section.
 
 1. When Giuseppe shares, updates, or asks for feedback on a section (or
    the whole application), read it alongside the relevant call
-   requirement, `references.bib`, and (where relevant) the CVs.
+   requirement, `application/references.bib`, and (where relevant) the CVs.
 2. Ask clarifying questions before giving feedback if something is
    ambiguous or missing context.
 3. Give structured feedback per section: strengths, gaps against the
@@ -301,11 +304,12 @@ full pass and any ad hoc review request for a single section.
 5. Track page/length limits via `grep PAGEMARK` after Giuseppe
    compiles, and flag overruns.
 6. Off-limits for content edits: the actual content of
-   `proposal/main-*.tex` and `proposal/cv-*.tex` files (any such file
-   other than the templates themselves), and `references.bib`. The
-   templates (`main-template.tex`, `cv-template.tex`) may be edited
-   when Giuseppe asks to evolve the template, and syncing a template
-   update into an existing content file is allowed when explicitly
-   requested (see "File naming convention" under Role, above).
-   Build/merge support (compiling, assembling the submission PDF) is
-   fine since it doesn't touch content.
+   `application/main-*.tex` and `application/cv-*.tex` files (any such
+   file other than the templates themselves), and
+   `application/references.bib`. The templates (`main-template.tex`,
+   `cv-template.tex`) may be edited when Giuseppe asks to evolve the
+   template, and syncing a template update into an existing content
+   file is allowed when explicitly requested (see "File naming
+   convention" under Role, above). Build/merge support (compiling,
+   assembling the submission PDF) is fine since it doesn't touch
+   content.

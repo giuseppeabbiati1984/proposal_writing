@@ -1,19 +1,24 @@
-# CEBE Interdisciplinary Fellowship — proposal LaTeX template
+# CEBE Interdisciplinary Fellowship — LaTeX templates
 
 Matches the formatting and structure required by the CEBE Interdisciplinary
 Fellowship Programme call (PhD/Postdoc), call closes **30 Sept 2026**.
 
+This folder holds the *templates* only. The actual proposal and CVs being
+submitted live in `../application/` — see `../application/README.md` to
+get started, and `../AGENTS.md` for the full naming convention and the
+"please update all templates" workflow that keeps files in `application/`
+in sync with these templates.
+
 ## Files
 
-- `main-template.tex` — the project proposal itself: frontpage, table of contents,
-  Project Summary, Project Description (with the exact required
-  subheadings), Project relevance to CEBE research fields, Sustainability
-  goals.
-- `cv-template.tex` — a single CV template. Copy it once per person
-  (`cv-pi.tex`, `cv-cosupervisor1.tex`, `cv-candidate.tex`, ...) and fill
-  each in separately — max 2 pages per the call.
-- `references.bib` — bibliography for citations used in `main-template.tex`
-  (via natbib: `\citep{key}` / `\citet{key}`).
+- `main-template.tex` — the project proposal template: frontpage, table
+  of contents, Project Summary, Project Description (with the exact
+  required subheadings), Project relevance to CEBE research fields,
+  Sustainability goals.
+- `cv-template.tex` — the CV template.
+- `references.bib` — a minimal stub bibliography, only so this template
+  compiles standalone for testing. The real, growing bibliography lives
+  at `../application/references.bib`.
 
 ## Formatting compliance
 
@@ -27,13 +32,13 @@ Fellowship Programme call (PhD/Postdoc), call closes **30 Sept 2026**.
   `\setmainfont{Times New Roman}` — see the comment block at the top of
   `main-template.tex`.
 
-## Building
+## Building (to preview/test the template itself)
 
 With `latexmk` (recommended — handles the bibtex re-run automatically):
 
 ```
 latexmk -pdf main-template.tex
-latexmk -pdf cv-template.tex   # repeat per CV copy
+latexmk -pdf cv-template.tex
 ```
 
 Or manually:
@@ -44,6 +49,9 @@ bibtex main-template
 pdflatex main-template.tex
 pdflatex main-template.tex
 ```
+
+The same commands apply in `application/`, just run against the real
+file names there (e.g. `latexmk -pdf main-cebe2026.tex`).
 
 ## Checking page limits
 
@@ -64,26 +72,14 @@ The call enforces hard maxima per section:
 | Sustainability goals | 1/2 page |
 | Each CV | 2 pages |
 
-Each section in `main-template.tex` and `cv-template.tex` is bracketed by a
-`\pagemark{...}` marker that prints to the compile log. After building,
+Each section in `main-template.tex` and `cv-template.tex` is bracketed by
+a `\pagemark{...}` marker that prints to the compile log. After building,
 check where each section starts/ends:
 
 ```
-grep PAGEMARK main.log
+grep PAGEMARK main-template.log
 grep PAGEMARK cv-template.log
 ```
-
-## Assembling the submission PDF
-
-The call requires **one single PDF**: frontpage + proposal + all CVs, in
-that order. Once every file is compiled to its own PDF, merge them
-(`pdfunite` on Linux/WSL, or `pdftk`):
-
-```
-pdfunite main.pdf cv-pi.pdf cv-cosupervisor1.pdf cv-candidate.pdf submission.pdf
-```
-
-Submit `submission.pdf` via the EasyChair portal linked from www.cebe.dk.
 
 ## Build artifacts
 
