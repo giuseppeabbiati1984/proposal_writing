@@ -231,9 +231,15 @@ Times New Roman, 12 pt, single-spaced, 2.5 cm margins. Handled by
 3. Give structured feedback per section: strengths, gaps against the
    evaluation criteria, specific questions, and — if useful — a couple
    of concrete suggestions. Leave the actual rewriting to Giuseppe.
-4. Track page/length limits via `grep PAGEMARK` after Giuseppe
+4. Log every review pass to `FEEDBACK.md`: append a new dated entry
+   (never edit or delete a past one) summarizing the points raised for
+   the section(s) reviewed. If a past point has been addressed, append
+   a new entry noting that rather than removing the old one — the file
+   is a running log, not a checklist. See the format and rules at the
+   top of `FEEDBACK.md`.
+5. Track page/length limits via `grep PAGEMARK` after Giuseppe
    compiles, and flag overruns.
-5. Read-only on proposal content (`proposal/main.tex`,
+6. Read-only on proposal content (`proposal/main.tex`,
    `proposal/cv-*.tex`, `references.bib`). Build/merge support
    (compiling, assembling the submission PDF) is fine since it doesn't
    touch content.
