@@ -72,12 +72,13 @@ Two standing commands drive most of the agent's work in this repo:
   (`application/main-*.tex`, excluding the template) plus all CVs
   (`application/cv-*.tex`, excluding the template). Review every section
   present against the call's required structure, the evaluation
-  criteria, and the knowledge base (below), then append one dated entry
-  to `FEEDBACK.md` per `FEEDBACK.md`'s own format/rules, summarizing
-  the findings across the whole application (not just one file). If a
-  file referenced by the required structure doesn't exist yet (e.g. no
-  `cv-*.tex` for a supervisor), note that as a gap rather than skipping
-  it silently.
+  criteria, and the knowledge base (below) — including an explicit
+  consistency check against the RF7 roadmap document (see "Knowledge
+  base for review") — then append one dated entry to `FEEDBACK.md` per
+  `FEEDBACK.md`'s own format/rules, summarizing the findings across the
+  whole application (not just one file). If a file referenced by the
+  required structure doesn't exist yet (e.g. no `cv-*.tex` for a
+  supervisor), note that as a gap rather than skipping it silently.
 
 These phrases (or close paraphrases of them) are the trigger for these
 specific actions; other requests are handled per the general rules
@@ -98,12 +99,40 @@ unless explicitly asked for a template update).
   infrastructure, prior work, or expertise that isn't reflected in a
   CV, flag the gap; when a proposal claim about a supervisor doesn't
   match their CV, flag the mismatch.
+- **RF7 research roadmap**:
+  `roadmap/RF7_Specific_Chapter_in_Research_Roadmap_v6.pdf` — CEBE's own
+  roadmap chapter for research field #7 (Extending the life of the
+  built environment). It defines RF7's vision/mission, four
+  sub-work-packages (WP7.1 Assessing capacity and residual life, WP7.2
+  Predicting future use and load scenarios, WP7.3 Engineering solutions
+  for life extension, WP7.4 Risk-based decision support systems), named
+  research gaps, interfaces with RF3/RF4/RF5, and a table of concrete
+  output/outcome/impact targets already planned for RF7. Whenever the
+  application claims field #7 (or discusses SHM, corrosion/deterioration,
+  life extension, or risk-based assessment regardless of declared
+  field), check consistency against this document:
+  - Does "Project relevance to CEBE research fields" map explicitly to
+    one or more of WP7.1–7.4, rather than gesturing at "field 7" in
+    general?
+  - Does the proposed contribution look additive to the roadmap's own
+    listed targets (a gap RF7 hasn't yet filled), or does it appear to
+    duplicate a target already planned there? If it looks like
+    duplication, flag it and ask how the candidate's contribution
+    differs.
+  - Are the stated RF3/RF4/RF5 interfaces (e.g. RF4's digitalisation/
+    automation work — AI, robotics, sensing, digital twins) described
+    consistently with how the roadmap characterizes them?
+  - Do named industry stakeholders (the roadmap mentions e.g. Danish
+    Road Directorate, Railway Denmark, COWI, Ramboll, NIRAS, Odense
+    University Hospital campus as a testbed) line up with or plausibly
+    extend this list, if named?
 - Ground review feedback in the call PDF
-  (`calls/CEBE_Interdisciplinary_Fellowship_2026.pdf`),
-  `application/references.bib`, and the CV files. Checking State of the Art content against the
-  wider literature (beyond what's cited) via web search is fine, but
-  say so explicitly and keep it clearly separated from feedback that's
-  grounded in the applicant's own bibliography/CVs.
+  (`calls/CEBE_Interdisciplinary_Fellowship_2026.pdf`), the RF7 roadmap
+  above, `application/references.bib`, and the CV files. Checking State
+  of the Art content against the wider literature (beyond what's cited)
+  via web search is fine, but say so explicitly and keep it clearly
+  separated from feedback that's grounded in the applicant's own
+  bibliography/CVs/roadmap.
 
 ### Context
 
@@ -129,13 +158,22 @@ project, which strengthens the "why this candidate" argument.
 **Aarhus University supervisors:**
 - **Giuseppe (PI / main applicant)** — Aarhus University, CAE. Structural
   health monitoring, hybrid testing, system identification, structural
-  dynamics, ML in structural engineering.
+  dynamics, ML in structural engineering. Directly matches the RF7
+  roadmap's WP7.1 gap: SHM data is rarely translated into quantitative
+  capacity/reliability updating (Bayesian updating, Kalman filtering,
+  physics-informed ML) — this is arguably the core of the RF7 gap
+  Giuseppe's expertise addresses.
 - **Jhonattan G T Martinez Ribon** — Assistant Professor, Aarhus
   University, Dept. of Civil and Architectural Engineering (Design and
   Construction group). BIM, Unmanned Aerial Systems, Digital Twins for
   construction, Lean Construction, CO2/carbon emissions simulation,
   Construction 4.0. Same university as Giuseppe but a different research
-  group. (pure.au.dk/portal/en/persons/jgmartinez%40cae.au.dk)
+  group. (pure.au.dk/portal/en/persons/jgmartinez%40cae.au.dk) His
+  UAV/robotic inspection and digital-twin work maps onto the RF7
+  roadmap's own UAV/robotic inspection + AI/digital-twin integration
+  gap, which the roadmap explicitly frames as an RF4↔RF7 interface —
+  useful to cite directly when arguing the project's interdisciplinary
+  necessity.
 
 **ETH Zurich supervisors:**
 - **Carolin Reichherzer, PhD** — immersive systems (VR/AR), human-AI
@@ -153,7 +191,11 @@ project, which strengthens the "why this candidate" argument.
   and durability of reinforced concrete, including under climate change
   — strong fit for CEBE fields on environmental sustainability
   assessment, low-carbon/robust materials, and extending building
-  service life. (ifb.ethz.ch/durability/people/uangst.html)
+  service life. (ifb.ethz.ch/durability/people/uangst.html) The RF7
+  roadmap explicitly names corrosion/ASR deterioration modelling as an
+  open gap under WP7.1 — Ueli's durability expertise maps directly onto
+  it and is worth citing as evidence the team can close a gap the
+  roadmap itself has identified, not just work adjacent to it.
 
 Because the second research group is at ETH Zurich (not Aarhus), this
 project is genuinely cross-university/cross-border — a strength for the
@@ -268,7 +310,12 @@ Times New Roman, 12 pt, single-spaced, 2.5 cm margins. Handled by
   concrete rather than generic?
 - **Stakeholders**: named and specific, or vague?
 - **Project relevance to CEBE research fields**: field(s) explicitly
-  identified, contribution clearly stated?
+  identified, contribution clearly stated? If field #7 is claimed (or
+  the content touches SHM, corrosion/deterioration, life extension, or
+  risk-based assessment), run the RF7 roadmap consistency check
+  described under "Knowledge base for review" — explicit WP7.1–7.4
+  mapping, additive vs. duplicative against the roadmap's own targets,
+  RF3/RF4/RF5 interface consistency, and stakeholder alignment.
 - **Sustainability goals**: specific objectives, trade-offs, and
   methodological choices — not boilerplate?
 - **Cross-university status**: flagged if the collaboration is
