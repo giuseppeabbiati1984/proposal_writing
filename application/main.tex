@@ -60,6 +60,9 @@
 %   Sustainability goals          max 1/2 page
 \newcommand{\pagemark}[1]{\typeout{PAGEMARK: #1 -- page \thepage}}
 
+\newcommand{\projectname}{\textbf{PROJECT\textunderscore NAME }}
+\newcommand{\asset}{\textbf{BRIDGE\textunderscore NAME }}
+
 % ---- Expected-length annotations -------------------------------------------
 % Prints the call's stated page limit right under each section heading, so
 % it stays visible while drafting. Set \templatenotesfalse (just below) to
@@ -125,17 +128,16 @@ Submission date: 2026-09-30
 \section{Project Summary}
 \lengthnote{max 1/2 page (per the call)}
 
-\textcolor{black}{Critical infrastructure is increasingly affected by aging, climate exposure, water ingress, and limited maintenance resources, while bridge inspection generates growing volumes of heterogeneous information from Uncrewed Aerial Systems (UAS), sensors, inspection reports, and 3D models. The emerging challenge is to support engineers what the combined evidence means, how certain that interpretation is, and what steps should be taken next, in collaborative workflows that combine multimodal AI with engineering expertise.
+Critical infrastructure is increasingly affected by aging, climate exposure, water ingress, and limited maintenance resources, while bridge inspection generates growing volumes of heterogeneous information from Uncrewed Aerial Systems (UAS), sensors, inspection reports, and 3D models. The emerging challenge is to support engineers what the combined evidence means, how certain that interpretation is, and what steps should be taken next, in collaborative workflows that combine AI with engineering expertise.
 
-This PhD will develop and validate a human-centered situational-awareness framework for bridge Structural Health Monitoring (SHM). The framework will integrate UAS imagery, sensor measurements, structural information, inspection histories, environmental observations, and engineering knowledge through a Digital Twin (DT) and a knowledge graph. Knowledge-grounded multimodal AI based on Large Language Models (LLMs) and Vision-Language Models (VLMs) will support interpretation of this evidence by identifying relevant relationships, plausible deterioration mechanisms, uncertainty, and information gaps. 
+This PhD will develop and validate a human-centered situational-awareness framework for bridge Structural Health Monitoring (SHM). The framework will integrate UAS imagery, sensor measurements, structural information, inspection histories, environmental observations, and engineering knowledge through a DT (DT) and a knowledge graph. Knowledge-grounded AI based on LLMs and VLMs will support interpretation of this evidence by identifying relevant relationships, plausible deterioration mechanisms, uncertainty, and information gaps. 
 
 The scientific contribution is a new human–AI decision paradigm in which multimodal evidence is semantically contextualized, transformed into an evolving assessment of the infrastructure situation, interpreted through AI-supported reasoning, challenged by the engineer, and converted into inspection or maintenance decisions. 
 
 The project will focus on bridge deterioration associated with water ingress, expansion joints, drainage deficiencies, moisture, cracking, and corrosion-related symptoms.
 
 The framework will be validated experimentally by comparing conventional engineering workflows, AI assistance without semantic grounding, and the proposed knowledge-grounded human–AI workflow. 
-Collaboration with Aarhus Municipality will provide access to diverse infrastructure case studies across Aarhus, enabling validation under real operational conditions. An international case study in Salvador, Bahia, Brazil, supported by the Federal University of Bahia, will complement the Danish cases and investigate the framework’s transferability to contexts with different climatic conditions, data availability, monitoring capabilities, and resource constraints. This comparison will also assess the approach's applicability in developing countries, where infrastructure owners may face limited monitoring technologies, incomplete historical data, and constrained inspection and maintenance resources. 
-}
+Collaboration with Aarhus Municipality will provide access to diverse infrastructure case studies across Aarhus, enabling validation under real operational conditions. An international \asset in Salvador, Bahia, Brazil, supported by the Federal University of Bahia, will complement the Danish cases and investigate the framework’s transferability to contexts with different climatic conditions, data availability, monitoring capabilities, and resource constraints. This comparison will also assess the approach's applicability in developing countries, where infrastructure owners may face limited monitoring technologies, incomplete historical data, and constrained inspection and maintenance resources. 
 
 \pagemark{Project Summary -- end}
 
@@ -149,49 +151,91 @@ Collaboration with Aarhus Municipality will provide access to diverse infrastruc
 
 \subsection{Motivation, Significance and Scientific Challenges}
 
-\textcolor{black} \justifying {Bridge inspection and Structural Health Monitoring (SHM) are undergoing rapid digital transformation. Unmanned Aerial Systems (UAS) can capture high-resolution information from hard-to-access structural elements, sensors can continuously monitor structural and environmental variables, computer vision can automatically classify anomalies. 
+\subsubsection{Motivation}
 
-Digital Twins (DTs) can provide virtual replicas of real-world assets by integrating information from multiple sources.
+Bridge inspection and Structural Health Monitoring (SHM) are undergoing rapid digital transformation. Unmanned Aerial Systems (UAS) can capture high-resolution information from hard-to-access structural elements, sensors can continuously monitor structural and environmental variables, CV can automatically classify anomalies. DTs (DTs) can provide virtual replicas of real-world assets by integrating information from multiple sources.
 
 Nevertheless, improved data acquisition does not automatically lead to better engineering decisions. Inspection information remains widely distributed across images, point clouds, drawings, reports, sensor measurements, historical observations, and expert knowledge~\cite{hoskere_unified_2025}.
 
 Engineers must combine these heterogeneous sources to determine whether an observed condition is significant, whether additional inspection is needed, and which intervention to prioritize. 
 
 \justifying {This challenge is particularly relevant to water-related deterioration. Leakage through expansion joints, defective drainage, repeated wetting, and moisture penetration can contribute to deterioration of concrete, reinforcement, bearings, and steel components. However, a water stain, crack, corrosion indicator, or abnormal measurement cannot be interpreted in isolation. Its significance depends on the affected structural component, spatial location, inspection history, environmental exposure, previous repairs, associated defects, and progression over time. The research challenge is therefore moving from automated defect detection toward situational understanding of the infrastructure}.
+%
+\subsubsection{Significance}
+%
+The project's vision is to develop a human-centered DT that supports engineers in designing and implementing inspection campaigns by integrating historical data with environmental information and numerical simulation outputs. A key aspect is enabling engineers reason from what has been detected to what it may indicate, making the supporting evidence and remaining uncertainty explicit so that further inspection or intervention can be justified.
 
-The project's vision is to develop a \textbf{human-centered DT that supports engineers in designing and implementing inspection campaigns by integrating historical data with environmental information and numerical simulation outputs. A key aspect is enabling engineers reason from what has been detected to what it may indicate, making the supporting evidence and remaining uncertainty explicit so that further inspection or intervention can be justified}.
+AI models may provide an opportunity for engineers to rapidly access and interpret a variety of data sources quickly to support them in their decision-making process. However, effective human-AI collaboration are only beginning to emerge and remain particularly underexplored for inspection and SHM workflows. 
 
-Multimodal AI models may provide an opportunity for engineers to rapidly access and interpret a variety of data sources quickly to support them in their decision-making process. However, effective human-AI collaboration are only beginning to emerge and remain particularly underexplored for inspection and SHM workflows. 
+The DT will act as the shared representation of the physical infrastructure, while a knowledge graph will organize the relationships among structural components, observations, inspection events, deterioration mechanisms, and engineering knowledge. AI will reason over this information and communicate its conclusions to engineers through traceable evidence rather than producing isolated recommendations.
 
-The DT will act as the shared representation of the physical infrastructure, while a knowledge graph will organize the relationships among structural components, observations, inspection events, deterioration mechanisms, and engineering knowledge. Multimodal AI will reason over this information and communicate its conclusions to engineers through traceable evidence rather than producing isolated recommendations.
-
-The technology around UAS, DTs, knowledge graphs, and Large Language Models (LLMs) is evolving rapidly; however, the application of these remains largely incorporated into separate systems. The primary contribution of this work is to integrate them within one explicit situational-awareness and human--AI decision framework in which AI reasoning and human engineering judgment have defined and complementary roles. The system will support evidence retrieval, contextualization, alternative interpretations, and identification of information gaps, while humans remain responsible for consequential structural and maintenance decisions.
-
-%The project's distinguishing feature is not the use of UAS, DTs, knowledge graphs, or Large Language Models (LLMs) individually. These technologies are already developing rapidly. The novelty lies in integrating them within an explicit situational-awareness and human--AI decision framework in which AI reasoning and human engineering judgment have defined and complementary roles. The system will support evidence retrieval, contextualization, alternative interpretations, and identification of information gaps, while humans remain responsible for consequential structural and maintenance decisions.
-
-The main scientific focus will be on understanding how heterogeneous infrastructure information can be transformed into an evolving semantic representation of bridge condition, how grounded multimodal AI can reason reliably across that representation, how to communicate uncertainty and alternative interpretations to engineers, and whether the resulting human--AI collaboration improves decision performance. A further focus will be determining how much information is necessary for useful AI-supported SHM when complete DTs or extensive permanent sensing are unavailable.}
+The technology around UAS, DTs, KGs, and LLMs is evolving rapidly; however, the application of these remains largely incorporated into separate systems. The primary contribution of this work is to integrate them within one explicit situational-awareness and human--AI decision framework in which AI reasoning and human engineering judgment have defined and complementary roles. The system will support evidence retrieval, contextualization, alternative interpretations, and identification of information gaps, while humans remain responsible for consequential structural and maintenance decisions.
+%
+\subsubsection{Scientific challenges}
+%
+%The project's distinguishing feature is not the use of UAS, DTs, KGs, or LLMs individually. These technologies are already developing rapidly. The novelty lies in integrating them within an explicit situational-awareness and human--AI decision framework in which AI reasoning and human engineering judgment have defined and complementary roles. The system will support evidence retrieval, contextualization, alternative interpretations, and identification of information gaps, while humans remain responsible for consequential structural and maintenance decisions.
+%
+The main scientific focus will be on:
+%
+\begin{enumerate}[label=F\arabic*]
+    \item to cast an evolving semantic representation of the asset specific condition, historical record of deterioration and maintenance plans, and general knowledge on deterioration mechanisms.\label{focus:semantic}
+    \item to develop an AI agent that utilizes such semantic representation to provide empirical evidence and formulate hypothesis on the construction condition and suggest maintenance plans.\label{focus:agentic}
+    \item to create a human interaction layer based on AR and conversational agents through which the DT operators evaluate the evolving asset situation in an immersive environment with reduced cognitive load.\label{focus:immersive}
+\end{enumerate}
+%
+AU-CAE focus is on \ref{focus:semantic} while ETHZ focus is on \ref{focus:immersive} whereas \ref{focus:agentic} is addressed jointly. 
+%
+The PhD project funded by \projectname will answer the following three questions aligned with the focus points:
+%
+\begin{enumerate}[label=Q\arabic*]
+    \item what granularity is needed in the semantic representation of the asset to automate reasoning on its condition using AI agents? \label{question:sematic}
+    \item how semantic representation shall be integrated with AI to maximize likelihood of logical consistency in reasoning?
+    \item how the DT operator shall interact with the immersive environment to improve situation awareness while reducing cognitive load? \label{question:immersive}
+\end{enumerate}
+%
+AU-CAE tackle \ref{question:sematic} while ETHZ \ref{question:immersive}. The key-enabling technologies involved in this project are 1) KGs, used to cast semantic representations, 2) LLMs, used to implement agentic AI and 3) AR, used to create the human interaction layer.
+%
+%how grounded AI can reason reliably across that representation, how to communicate uncertainty and alternative interpretations to engineers, and whether the resulting human--AI collaboration improves decision performance. 
+%A further focus will be determining how much information is necessary for useful AI-supported SHM when complete DTs or extensive permanent sensing are unavailable.
 
 \subsection{State of the Art}
 
-\textcolor{black}{\justifying
+\subsubsection{Digital twins}
 
-%DTs have increasingly been used to unify structural models, sensing, inspection data, and historical information. However, many implementations remain primarily focused on visualization, monitoring, synchronization, or prediction.
+Research in bridge SHM has achieved important advances in automated inspection, sensing, CV, and DTs.
 
-Research in bridge SHM has achieved important advances in automated inspection, sensing, computer vision, and DTs. UAS and photogrammetry improve inspection access and provide detailed geometric and visual information, while machine-learning approaches can identify cracks, spalling, corrosion, moisture traces, and other visible defects. More recently, Vision-Language Models (VLMs) have emerged as a promising approach for image-based bridge damage documentation because of their ability to connect visual observations with natural-language descriptions and engineering information \cite{celik2026}. Sensors additionally provide continuous information on structural response and environmental conditions.
+UAS and photogrammetry improve inspection access and provide detailed geometric and visual information, while machine-learning approaches can identify cracks, spalling, corrosion, moisture traces, and other visible defects. 
 
-Immersive DT environments have been combined with virtual-agent interfaces for infrastructure leak simulation and monitoring \cite{marzban2025}, while natural-language interfaces such as ChatTwin have demonstrated the potential of conversational interaction to improve accessibility to infrastructure DT information during operation and maintenance \cite{luo2026}. These developments represent important steps toward more interactive DTs, but a broader challenge remains: moving beyond access to and visualization of information toward supporting engineers in interpreting how multiple observations relate to one another and how this evidence should inform subsequent inspection or maintenance actions. Furthermore, Extended Reality (XR), which comprises Virtual Reality (VR), Augmented Reality (AR), and Mixed Reality (MR), shows great promise for enhancing DTs, both as a gateway to experiencing data that simulate or extend the real world~\cite{pandey2025digital} and as a means of improving usability~\cite{vona2025user}. XR is also being explored as a way to enhance the manual bridge inspection process independently of DTs~\cite{smith_wearable_2022, gabbard_inspectar_nodate}.
+A further limitation concerns transferability. Many advanced SHM and AI-supported infrastructure management approaches rely on relatively complete digital models, inspection histories, structured knowledge, imagery, or sensor networks. Their performance when information is incomplete, heterogeneous, or collected under constrained inspection resources remains insufficiently understood. 
 
-An ontology is a formal description of the concepts in a particular area and how they relate to one another. In the context of DT, ontologies are are increasingly being investigated to represent relationships among structural components, inspection events, experimental observations, deterioration mechanisms, and maintenance actions. Knowledge Graphs (KGs) are mathematical models utilized to describes \emph{ontologies} in computer programs. The integration of LLMs and KGs has similarly received growing attention as a means of enforcing explicit constraints on domain knowledge and semantic relationships \cite{ghidalia2024}. 
+This research addresses these gaps by integrating situational awareness, semantic representation, multimodal reasoning, human--AI interaction, and data sufficiency into a unified, experimentally validated SHM framework. The objective is therefore not only to improve the acquisition or automated interpretation of bridge information, but to investigate how heterogeneous and incomplete evidence can be transformed into traceable situational understanding that supports engineering decision-making.
 
-Recent bridge-specific research has further demonstrated the potential of human-in-the-loop approaches combining Large Language Models (LLMs), Graph Neural Networks (GNNs), and KGs for constructing and refining bridge maintenance knowledge \cite{li2026}. In parallel, LLMs and VLMs are beginning to support natural-language interaction with engineering information and multimodal evidence \cite{celik2026,luo2026}. Graph-grounded AI approaches are therefore particularly promising because they offer a mechanism for constraining AI reasoning with domain-specific and asset-specific evidence rather than relying exclusively on the parametric knowledge of a language model.
+More recently, VLMs (VLMs) have emerged as a promising approach for image-based bridge damage documentation because of their ability to connect visual observations with natural-language descriptions and engineering information \cite{celik2026}.
 
-Nevertheless, important gaps remain. Existing research is predominantly technology-centered, with comparatively limited attention to the engineer's situational awareness and decision process \cite{celik_vision_2026}. Human involvement is often introduced to validate AI outputs, refine generated knowledge, or facilitate interaction with digital information \cite{li2026,luo2026}, rather than being explicitly modeled as part of a joint human--AI reasoning and decision-making system. Current approaches also provide limited evidence on how source provenance, uncertainty, competing hypotheses, and information gaps should be represented and communicated to engineers. Most importantly, relatively little empirical evidence exists on whether semantically grounded AI improves the quality, consistency, or efficiency of engineering decisions compared with conventional inspection workflows or generic AI assistance.
+Sensors additionally provide continuous information on structural response and environmental conditions.
 
-A further limitation concerns transferability. Many advanced SHM and AI-supported infrastructure management approaches rely on relatively complete digital models, inspection histories, structured knowledge, imagery, or sensor networks. Their performance when information is incomplete, heterogeneous, or collected under constrained inspection resources remains insufficiently understood. This research addresses these gaps by integrating situational awareness, semantic representation, multimodal reasoning, human--AI interaction, and data sufficiency into a unified, experimentally validated SHM framework. The objective is therefore not only to improve the acquisition or automated interpretation of bridge information, but to investigate how heterogeneous and incomplete evidence can be transformed into traceable situational understanding that supports engineering decision-making.}
+\subsubsection{Semantic descriptions}
 
-%Digital twin for monitoring of bridges (review) \cite{celik_vision_2026}%\url{https://scholar.google.com/citations?hl=en&user=LgEgwV4AAAAJ&view_op=list_works&sortby=pubdate}
+An ontology is a formal description of the concepts in a particular area and how they relate to one another. In the context of DT, ontologies are are increasingly being investigated to represent relationships among structural components, inspection events, experimental observations, deterioration mechanisms, and maintenance actions. KGs (KGs) are mathematical models utilized to describes \emph{ontologies} in computer programs. The integration of LLMs and KGs has similarly received growing attention as a means of enforcing explicit constraints on domain knowledge and semantic relationships \cite{ghidalia2024}. 
+
+Recent bridge-specific research has further demonstrated the potential of human-in-the-loop approaches combining LLMs, Graph Neural Networks (GNNs), and KGs for constructing and refining bridge maintenance knowledge \cite{li2026}. In parallel, LLMs and VLMs are beginning to support natural-language interaction with engineering information and multimodal evidence \cite{celik2026,luo2026}. Graph-grounded AI approaches are therefore particularly promising because they offer a mechanism for constraining AI reasoning with domain-specific and asset-specific evidence rather than relying exclusively on the parametric knowledge of a language model.
+
+\subsubsection{Immersive environments}
+
+Immersive DT environments have been combined with virtual-agent interfaces for infrastructure leak simulation and monitoring \cite{marzban2025}, while natural-language interfaces such as \emph{ChatTwin} have demonstrated the potential of conversational interaction to improve accessibility to infrastructure DT information during operation and maintenance \cite{luo2026}.
+
+Furthermore, Extended Reality (XR), which comprises Virtual Reality (VR), Augmented Reality (AR), and Mixed Reality (MR), shows great promise for enhancing DTs, both as a gateway to experiencing data that simulate or extend the real world~\cite{pandey2025digital} and as a means of improving usability~\cite{vona2025user}. XR is also being explored as a way to enhance the manual bridge inspection process independently of DTs~\cite{smith_wearable_2022, gabbard_inspectar_nodate}.
+
+%Nevertheless, important gaps remain. 
+
+Existing research is predominantly technology-centered, with comparatively limited attention to the engineer's situational awareness and decision process \cite{celik_vision_2026}. Human involvement is often introduced to validate AI outputs, refine generated knowledge, or facilitate interaction with digital information \cite{li2026,luo2026}, rather than being explicitly modeled as part of a joint human--AI reasoning and decision-making system. Current approaches also provide limited evidence on how source provenance, uncertainty, competing hypotheses, and information gaps should be represented and communicated to engineers. Most importantly, relatively little empirical evidence exists on whether semantically grounded AI improves the quality, consistency, or efficiency of engineering decisions compared with conventional inspection workflows or generic AI assistance.
+
+These developments represent important steps toward more interactive DTs, but a broader challenge remains: moving beyond access to and visualization of information toward supporting engineers in interpreting how multiple observations relate to one another and how this evidence should inform subsequent inspection or maintenance actions.
+
+
+%DT for monitoring of bridges (review) \cite{celik_vision_2026}%\url{https://scholar.google.com/citations?hl=en&user=LgEgwV4AAAAJ&view_op=list_works&sortby=pubdate}
 %Combining ML and ontologies (review) \cite{ghidalia_combining_2024}
-%Chat-with-twin is about using LLM to interact with digital twins instead of GUIs \cite{luo_chattwin_2026}
+%Chat-with-twin is about using LLM to interact with DTs instead of GUIs \cite{luo_chattwin_2026}
 %Virtual AI assistant in immersive environment \cite{marzban_immersive_2025}
 %AR to facilitate annotation and folding of damage state on structure \cite{gabbard_inspectar_nodate}
 %LLM and GNN for ontology integration with AI \cite{li_human---loop_2026}
@@ -203,33 +247,46 @@ A further limitation concerns transferability. Many advanced SHM and AI-supporte
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.8em}
 
-The project will develop and experimentally validate a human-centered framework for bridge Structural Health Monitoring (SHM) in which a semantic Digital Twin (DT), multimodal Artificial Intelligence (AI), and Augmented Reality (AR) work together to transform heterogeneous inspection data into traceable engineering knowledge and decision support. Rather than treating detected defects as independent observations, the framework will represent bridge condition as an evolving infrastructure situation in which observations are connected to physical components, deterioration mechanisms, historical conditions, environmental exposure, uncertainty, and engineering actions.
-
-The research is organized into three interconnected Work Packages (WPs). WP1 develops the semantic representation of the physical asset and its evolving condition; WP2 develops multimodal, graph-grounded AI for evidence-based interpretation and reasoning; and WP3 develops the human--AI interaction environment and evaluates how the resulting system affects engineering situational awareness and decision-making.
-
-\textbf{WP1: Semantic Digital Twin and Infrastructure Knowledge Representation}
-
-WP1 will establish the project's semantic foundation by developing a DT that represents both the physical bridge and its evolving condition. UAS imagery, photogrammetric models, inspection reports, structural models, historical records, environmental observations, numerical simulation outputs, and selected sensor measurements will be linked to identifiable bridge components and represented through a Knowledge Graph (KG).
-
-The research will first define realistic inspection and maintenance decision scenarios together with bridge and SHM specialists. Particular attention will be given to water ingress and moisture-related deterioration because these phenomena require engineers to establish relationships across multiple components and information sources. The semantic model will therefore represent elements such as expansion joints, drainage systems, bearings, concrete and steel components, together with observations such as moisture traces, cracking, corrosion indicators, environmental exposure, previous inspections, and maintenance interventions.
-
-Each observation will be represented not simply as a detected defect, but as contextualized evidence describing \textit{what} was observed, \textit{where} and \textit{when} it occurred, \textit{which} structural component it concerns, \textit{which source} produced the evidence, its relationship with previous observations, and the associated level of uncertainty. This will allow the DT to evolve as new evidence becomes available and provide a machine-interpretable representation of the infrastructure situation.
-
-The main scientific contribution of WP1 will be a semantic SHM model that connects heterogeneous and temporally distributed evidence to physical bridge components while explicitly representing provenance, uncertainty, and changes in condition.
-
-\textbf{WP2: Multimodal and Graph-Grounded Artificial Intelligence}
-
-WP2 will investigate how multimodal AI can transform heterogeneous observations into evidence-grounded interpretations of bridge condition. Computer Vision (CV) and Vision-Language Model (VLM) technologies will identify and contextualize candidate observations from UAS imagery, photographs, inspection documentation, and other multimodal information. The objective is not to develop another universal defect detector, but to determine how automatically extracted observations can become structured evidence within the semantic DT.
-
-A graph-grounded Large Language Model (LLM)/VLM reasoning architecture will retrieve relevant asset-specific information from the KG before generating an engineering interpretation. For example, when moisture is detected below an expansion joint, the system may retrieve the joint's condition and inspection history, drainage configuration, recent rainfall exposure, nearby cracking or corrosion observations, bearing locations, previous repairs, and relevant engineering knowledge before proposing plausible deterioration hypotheses.
-
+The project will develop and experimentally validate a human-centered framework for bridge Structural Health Monitoring (SHM) in which a semantic DT (DT), multimodal Artificial Intelligence (AI), and Augmented Reality (AR) work together to transform heterogeneous inspection data into traceable engineering knowledge and decision support. 
+%
 A central research challenge will be preventing the AI from presenting unsupported conclusions as established facts. The reasoning architecture will therefore distinguish between observed evidence, retrieved knowledge, inferred relationships, and hypotheses. It will communicate uncertainty, provide evidence provenance, identify competing explanations, and explicitly indicate missing information. When available evidence is insufficient, the system will recommend what additional inspection, measurement, or historical information would most effectively reduce uncertainty.
+%
+Rather than treating detected defects as independent observations, the framework will represent bridge condition as an evolving infrastructure situation in which observations are connected to physical components, deterioration mechanisms, historical conditions, environmental exposure, uncertainty, and engineering actions.
+%
+Each observation will be represented not simply as a detected defect, but as contextualized evidence describing \textit{what} was observed, \textit{where} and \textit{when} it occurred, \textit{which} structural component it concerns, \textit{which source} produced the evidence, its relationship with previous observations, and the associated level of uncertainty. This will allow the DT to evolve as new evidence becomes available and provide a machine-interpretable representation of the infrastructure situation.
+%
+The research program of \projectname is organized into three interconnected Work Packages (WPs) using the \asset as demonstrator. The \asset consists of an existing bridge. Particular attention will be given to water ingress and moisture-related deterioration because these phenomena are particularly relevant for aging infrastructures. Inspection data and maintenance decision scenarios will be formulated accordingly. 
+%
+WP1 develops the semantic representation of the physical asset and its evolving condition; WP2 develops multimodal, graph-grounded AI for evidence-based interpretation and reasoning; and WP3 develops the human--AI interaction environment and evaluates how the resulting system affects engineering situational awareness and decision-making.
 
-WP2 will also investigate \textit{data sufficiency}: how the quality of AI-supported assessment changes as different information sources are removed or become incomplete. This will establish whether reliable, trustworthy reasoning can be achieved in bridges where complete DTs, historical records, or extensive permanent sensor networks are unavailable.
-
-The main scientific contribution of WP2 will be a multimodal, graph-grounded AI architecture for traceable infrastructure reasoning that moves beyond defect recognition toward evidence-based interpretation of bridge condition.
+\textbf{WP1 Asset knowledge representation}
+%
+The main scientific contribution of WP1 will be a semantic model that links all digital assets associated with the \asset.
+%
+\begin{itemize}
+    \item \textbf{T1.1 Digital assets:} Technical drawings, historical data, maintenance reports associated with the \asset will be gathered and dissected. Based on this input, a BIM and a FEM model of the \asset will be produced. The FEM will be used to describe the mechanical response of the brdige and to generate synthetic response data whereas the BIM model will describe its geometry. Both available experimental response data and synthetic response data will be organize into databases (e.g., \texttt{InfluxDB} for time-series data and \texttt{MongoDB} for text data).\par
+    \item \textbf{T1.2 Semantic description:} A semantic model will be develop to describe the condition of the \asset including history of inspection data and maintenance reports. The BIM model developed in T1.1 will be used to derive a semantic layer for the \asset geometry. Additional semantic layers will be included for \emph{deterioration mechanisms} (e.g., cracking, corrosion), \emph{measurements} (e.g., UAS imagery, photogrammetric models), \emph{inspection reports}, \emph{maintenance plans}. The DT semantic description will be implemented as KGs.\par
+\end{itemize}
+%
+\textbf{WP2 Multimodal and Graph-Grounded Artificial Intelligence}
+%
+The main scientific contribution of WP2 will be a multimodal, graph-grounded AI architecture for traceable infrastructure reasoning that moves beyond defect recognition toward evidence-based interpretation of bridge condition.\par
+%
+\begin{itemize}
+    \item \textbf{T2.1 Automated annotation of deterioration:} WP2 will investigate how AI can transform heterogeneous observations into evidence-grounded interpretations of bridge condition. CV and VLM technologies will identify and contextualize candidate observations from UAS imagery, photographs, inspection documentation, and other multimodal information. The objective is not to develop another universal defect detector, but to determine how automatically extracted observations can become structured evidence within the semantic DT.\par
+    \item \textbf{T2.2 Automated reasoning on structure condition:} A graph-grounded LLM/VLM reasoning architecture will retrieve relevant asset-specific information from the KG before generating an engineering interpretation. For example, when moisture is detected below an expansion joint, the system may retrieve the joint's condition and inspection history, drainage configuration, recent rainfall exposure, nearby cracking or corrosion observations, bearing locations, previous repairs, and relevant engineering knowledge before proposing plausible deterioration hypotheses.\par
+    \item \textbf{T3.2 Human interaction:}
+\end{itemize}
+%
+%WP2 will also investigate \textit{data sufficiency}: how the quality of AI-supported assessment changes as different information sources are removed or become incomplete. This will establish whether reliable, trustworthy reasoning can be achieved in bridges where complete DTs, historical records, or extensive permanent sensor networks are unavailable.
 
 \textbf{WP3: Human--AI Collaboration, Extended Reality, and Experimental Validation}
+%
+\begin{itemize}
+    \item \textbf{T3.1}\par
+    \item \textbf{T3.2}\par
+    \item \textbf{T3.3}\par
+\end{itemize}
 
 WP3 will develop the human interaction layer through which engineers interrogate and evaluate the evolving infrastructure situation. Firstly, an interface using conversational agents connected to the DT will associate physical bridge components with current observations, historical changes, sensor information, supporting evidence, AI-generated hypotheses, uncertainty, alternative explanations, and potential inspection or maintenance actions. 
 
@@ -241,17 +298,19 @@ The complete framework will be evaluated experimentally using realistic bridge a
 
 %Engineering performance will be compared across three conditions: (1) conventional inspection and SHM workflows, (2) AI assistance without semantic grounding, and (3) the proposed graph-grounded human--AI framework. Evaluation will examine decision accuracy and consistency, time required to retrieve and interpret relevant evidence, situational awareness, cognitive workload, confidence calibration, appropriate reliance on AI, and the perceived usefulness and traceability of AI explanations.
 
-%Field validation will include bridge case studies focusing particularly on water ingress, expansion-joint and drainage deficiencies, moisture exposure, cracking, and corrosion-related deterioration. A major international case study in Salvador, Bahia, Brazil, will be conducted in collaboration with the Federal University of Bahia. The case will additionally support the data-sufficiency experiments by evaluating system performance under progressively different levels of information availability.
+%Field validation will include bridge case studies focusing particularly on water ingress, expansion-joint and drainage deficiencies, moisture exposure, cracking, and corrosion-related deterioration. A major international \asset in Salvador, Bahia, Brazil, will be conducted in collaboration with the Federal University of Bahia. The case will additionally support the data-sufficiency experiments by evaluating system performance under progressively different levels of information availability.
 
 WP3 will contribute to the scientific literature by assessing new methods of human-AI collaborative workflows that support trust, appropriate reliance, and decision-making for bridge inspection and SHM and present empirical evidence on their effectiveness. 
 
 %whether semantic and graph-grounded human--AI collaboration improves engineering situational awareness and decision performance compared with conventional workflows and non-grounded AI assistance.
 
 \textbf{Integrated Scientific Contribution}
+%
+%Together, the three WPs establish a continuous research chain from infrastructure evidence to semantic representation, from semantic representation to grounded AI reasoning, and from AI reasoning to human engineering decisions. WP1 addresses how heterogeneous bridge information can be represented as an evolving infrastructure situation; WP2 investigates how AI can reason over that representation while maintaining provenance and uncertainty; and WP3 evaluates novel methods for human-AI collaboration workflows that aim to effectively calibrate trust and establish appropriate reliance that build the foundation for effective decision-making. 
+%
+The overall scientific contribution will be a new paradighm for evidence-based decision-support system with immersive human-interaction facilitated by AI and AR. %supported by a semantic SHM representation, a multimodal graph-grounded reasoning architecture, an AR-enabled human-interaction framework, and experimental evidence on decision performance and data sufficiency. 
+Potential practical impacts include faster interpretation of inspection information, reduced effort spent searching fragmented records, better prioritization of inspection resources, and more transparent and traceable documentation of scientific evidence in support to engineering decisions.
 
-Together, the three WPs establish a continuous research chain from \textbf{infrastructure evidence to semantic representation, from semantic representation to grounded AI reasoning, and from AI reasoning to human engineering decisions}. WP1 addresses how heterogeneous bridge information can be represented as an evolving infrastructure situation; WP2 investigates how multimodal AI can reason over that representation while maintaining provenance and uncertainty; and WP3 evaluates novel methods for human-AI collaboration workflows that aim to effectively calibrate trust and establish appropriate reliance that build the foundation for effective decision-making. 
-
-The overall scientific contribution will be a new model of evidence-grounded human--AI engineering decision-making supported by a semantic SHM representation, a multimodal graph-grounded reasoning architecture, an AR-enabled human-interaction framework, and experimental evidence on decision performance and data sufficiency. Potential practical impacts include faster interpretation of inspection information, improved preventive maintenance, reduced effort spent searching fragmented records, better prioritization of inspection resources, and more transparent and traceable documentation of engineering decisions.
 \subsection{Research Environment and Supervision}
 
 \justifying
@@ -259,7 +318,7 @@ The overall scientific contribution will be a new model of evidence-grounded hum
 \setlength{\parskip}{0.8em}
 The project will be embedded in a highly interdisciplinary research environment jointly supported by Aarhus University (AU) and ETH Zurich, bringing together complementing expertise. AU will serve as the host institution, providing computational resources, DT and 3D modeling platforms, UAS and sensing technologies, and AI development tools. ETH Zurich will complement this environment with internationally recognized expertise in infrastructure durability and corrosion science and guidance in human-centred engineering, experimental design, and XR, strengthening the project's scientific foundation.
 
-%The project will be embedded in a highly interdisciplinary research environment jointly supported by Aarhus University (AU) and ETH Zurich, bringing together expertise in structural engineering, Structural Health Monitoring (SHM), infrastructure durability, Digital Twins (DTs), Unmanned Aerial Systems (UAS)-based inspection, multimodal Artificial Intelligence (AI), and human-centered engineering. AU will serve as the host institution and provide the primary research environment, including computational resources, DT and 3D modeling platforms, UAS and photogrammetry capabilities, sensing technologies, graph-database infrastructure, and AI development tools required to develop and validate the proposed framework. ETH Zurich will complement this environment with internationally recognized expertise in infrastructure durability and corrosion science, strengthening the project's scientific foundation.
+%The project will be embedded in a highly interdisciplinary research environment jointly supported by Aarhus University (AU) and ETH Zurich, bringing together expertise in structural engineering, Structural Health Monitoring (SHM), infrastructure durability, DTs (DTs), Unmanned Aerial Systems (UAS)-based inspection, multimodal Artificial Intelligence (AI), and human-centered engineering. AU will serve as the host institution and provide the primary research environment, including computational resources, DT and 3D modeling platforms, UAS and photogrammetry capabilities, sensing technologies, graph-database infrastructure, and AI development tools required to develop and validate the proposed framework. ETH Zurich will complement this environment with internationally recognized expertise in infrastructure durability and corrosion science, strengthening the project's scientific foundation.
 
 \textbf{Associate Professor Giuseppe Abbiati, AU,} will contribute expertise in structural mechanics, structural dynamics, computational methods, experimental testing, SHM, and infrastructure DTs. His role will provide the structural-engineering foundation for the project and ensure that the DT, monitoring methods, and AI-supported assessments remain connected to physically meaningful structural behavior. He will particularly contribute to defining SHM indicators, interpreting structural responses, developing realistic bridge-assessment scenarios, and validating the DT and monitoring components.
 
@@ -284,7 +343,7 @@ The \textbf{Federal University of Bahia (UFBA)} will provide an additional inter
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.8em}
 
-The project will involve key academic and public-sector stakeholders throughout requirements definition, system development, field validation, and evaluation. \textbf{Aarhus University (AU)} will lead the project's scientific and technological development, including the Digital Twin (DT), Structural Health Monitoring (SHM) integration, semantic knowledge representation, multimodal Artificial Intelligence (AI) reasoning, Unmanned Aerial Systems (UAS)-based inspection, and human--AI evaluation. AU will also provide the primary research infrastructure and coordinate the interdisciplinary research activities.
+The project will involve key academic and public-sector stakeholders throughout requirements definition, system development, field validation, and evaluation. \textbf{Aarhus University (AU)} will lead the project's scientific and technological development, including the DT (DT), Structural Health Monitoring (SHM) integration, semantic knowledge representation, multimodal Artificial Intelligence (AI) reasoning, Unmanned Aerial Systems (UAS)-based inspection, and human--AI evaluation. AU will also provide the primary research infrastructure and coordinate the interdisciplinary research activities.
 
 \textbf{Aarhus Municipality} will provide the essential connection to real infrastructure-management practice and support access to relevant infrastructure case studies in Aarhus. Its involvement will help define realistic inspection and maintenance scenarios, identify operational requirements and available data, and support validation of the proposed framework under actual infrastructure-management conditions. This collaboration will ensure that the research addresses practical challenges faced by public infrastructure owners rather than being limited to laboratory demonstrations.
 
@@ -308,13 +367,13 @@ The project will involve key academic and public-sector stakeholders throughout 
 
 The project lies at the intersection of structural and civil engineering, digitalization of the built environment, AI, infrastructure resilience, and human-centered engineering systems. Its central contribution to CEBE is the development of an interdisciplinary methodology that transforms heterogeneous infrastructure observations into trustworthy and traceable engineering decision support. In particular, the project will provide the following contributions;
 
-1) Within structural engineering and SHM, the project advances the interpretation of deterioration by relating observed bridge conditions to structural components, inspection history, environmental exposure, and physically plausible deterioration mechanisms. Within DT research, it advances the role of DTs from primarily monitoring and visualization tools toward interactive, semantically grounded engineering reasoning environments. Within AI research for the built environment, the project investigates how multimodal Large Language Model (LLM) and Vision-VLM systems can be grounded through KGs, infrastructure-specific evidence, uncertainty representation, and explicit human oversight.
+1) Within structural engineering and SHM, the project advances the interpretation of deterioration by relating observed bridge conditions to structural components, inspection history, environmental exposure, and physically plausible deterioration mechanisms. Within DT research, it advances the role of DTs from primarily monitoring and visualization tools toward interactive, semantically grounded engineering reasoning environments. Within AI research for the built environment, the project investigates how multimodal LLM and Vision-VLM systems can be grounded through KGs, infrastructure-specific evidence, uncertainty representation, and explicit human oversight.
 
 2) The project also contributes to human-centered digital engineering by investigating how reasoning responsibilities should be distributed between AI systems and structural engineers and by experimentally evaluating the performance of the combined human--AI system. This provides a stronger contribution than assessing algorithmic accuracy alone, because the relevant outcome in infrastructure management is not simply whether an AI model correctly identifies a defect, but whether the combined evidence, reasoning, and human judgment lead to more accurate, consistent, transparent, and timely engineering decisions.
 
 3) The Denmark--Switzerland--Brazil collaboration further strengthens the project's relevance by enabling the proposed digital SHM framework to be investigated across different climatic, technological, operational, and resource conditions. This international perspective will provide evidence regarding the framework's robustness, transferability, and applicability across both highly digitalized and resource-constrained infrastructure contexts.
 
-The expected contribution to CEBE is a transferable, human-centered model that integrates structural-engineering knowledge, semantic DTs, multimodal AI, and human expertise to support more resilient, intelligent, and evidence-based decision-making for the built environment.
+The expected contribution to CEBE is a transferable, human-centered model that integrates structural-engineering knowledge, semantic DTs, AI, and human expertise to support more resilient, intelligent, and evidence-based decision-making for the built environment.
 
 \pagemark{CEBE relevance -- end}
 
@@ -333,7 +392,7 @@ The project's primary sustainability objective is to support infrastructure life
 
 A second objective is to improve the efficiency of inspection and maintenance resources. Infrastructure owners cannot inspect, monitor, or intervene across all components with equal intensity. Evidence-grounded decision support can help prioritize structural components requiring additional investigation or intervention while reducing unnecessary inspections and avoiding excessive permanent instrumentation. The proposed approach therefore seeks to direct limited financial, technological, and human resources toward the locations where they provide the greatest engineering value.
 
-The research explicitly recognizes the sustainability trade-offs associated with digitalization. Digital Twins (DTs), Unmanned Aerial Systems (UAS), sensors, Artificial Intelligence (AI) computation, and data infrastructure themselves require energy, hardware, specialized skills, and financial resources. More digital technology is therefore not automatically more sustainable. The project will adopt a \textit{fit-for-purpose digitalization} principle and investigate the minimum combination of inspection, structural, environmental, and historical information required to achieve trustworthy AI-supported decision-making.
+The research explicitly recognizes the sustainability trade-offs associated with digitalization. DTs (DTs), Unmanned Aerial Systems (UAS), sensors, Artificial Intelligence (AI) computation, and data infrastructure themselves require energy, hardware, specialized skills, and financial resources. More digital technology is therefore not automatically more sustainable. The project will adopt a \textit{fit-for-purpose digitalization} principle and investigate the minimum combination of inspection, structural, environmental, and historical information required to achieve trustworthy AI-supported decision-making.
 
 The Brazilian case is particularly important for this methodological objective because it will evaluate whether the framework remains effective under incomplete and heterogeneous information conditions rather than only within highly instrumented infrastructure environments. In this way, the project addresses three interconnected dimensions of sustainability: \textbf{environmental sustainability} through infrastructure life extension and reduced demand for material-intensive interventions; \textbf{economic sustainability} through more efficient allocation of inspection and maintenance resources; and \textbf{social sustainability} through safer, more reliable, and transferable management of critical infrastructure across different technological and resource contexts.
 
