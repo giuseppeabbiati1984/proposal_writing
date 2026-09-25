@@ -69,23 +69,112 @@ Two standing commands drive most of the agent's work in this repo:
   it to every matching file found in `application/`, not just one, and
   preserve every word of Giuseppe's existing written content in its
   corresponding place in each file.
-- **"Please give me feedback on the application"** → run a full review
-  pass over the whole application, where *application* = the proposal
-  (`application/main-*.tex`, excluding the template) plus all CVs
-  (`application/CV-*.tex`, excluding the template). Review every section
-  present against the call's required structure, the evaluation
-  criteria, and the knowledge base (below) — including an explicit
-  consistency check against the RF7 roadmap document (see "Knowledge
-  base for review") — then append one dated entry to `FEEDBACK.md` per
-  `FEEDBACK.md`'s own format/rules, summarizing the findings across the
-  whole application (not just one file). If a file referenced by the
-  required structure doesn't exist yet (e.g. no `CV-*.tex` for a
-  supervisor), note that as a gap rather than skipping it silently.
+- **"Please give me feedback on the application"** (or any request to
+  review the proposal) → **first ask Giuseppe for the scope**: the full
+  application, or only some parts (e.g. the main file, the abstract,
+  specific sections of the main file, all CVs, specific CVs). Use a
+  multiple-choice question. Don't start reviewing until he answers.
+  Then run the review with the three subagents described under
+  "Review subagents" (below), restricted to the chosen scope. Here
+  *application* = the proposal (`application/main.tex` or
+  `application/main-*.tex`, excluding the template), the abstract
+  (`application/abstract.tex`), and all CVs (`application/CV-*.tex`,
+  excluding the template). Review every in-scope section against the
+  call's required structure, the evaluation criteria, and the knowledge
+  base (below) — including, whenever the proposal body is in scope, an
+  explicit consistency check against the RF7 roadmap document (see
+  "Knowledge base for review") — then append one dated entry to
+  `FEEDBACK.md` per `FEEDBACK.md`'s own format/rules, stating the
+  scope reviewed and summarizing the findings across it. If a file
+  referenced by the required structure doesn't exist yet (e.g. no
+  `CV-*.tex` for a supervisor), note that as a gap rather than
+  skipping it silently.
 
 These phrases (or close paraphrases of them) are the trigger for these
 specific actions; other requests are handled per the general rules
 above (ask questions, give feedback, don't write proposal content
 unless explicitly asked for a template update).
+
+### Review subagents
+
+Every review of the proposal (full or partial) is split across three
+subagents, launched in parallel with the Agent tool. The main agent
+(the orchestrator) chooses the scope with Giuseppe, prepares the
+inputs, launches the subagents, merges their reports, and is the only
+one that writes to `FEEDBACK.md`. Subagents are **read-only**: they
+never edit any file in the repo and never run git.
+
+| Agent | Focus | Model | Why this model |
+|---|---|---|---|
+| **science** | Scientific excellence: contribution and novelty with respect to the state of the art | `opus` | Deepest reasoning; judging novelty against the literature is the hardest and most consequential part of the review |
+| **strategy** | Strategic setting: alignment with the call and with CEBE's programme aims (vision, RF7 roadmap) | `sonnet` | Mostly cross-referencing the proposal against the call and roadmap; needs judgement, but not the top model |
+| **formalities** | Consistency with the formal settings of the call: templates, structure, page limits, CVs, timelines, budget | `haiku` | Checklist-style verification against fixed facts; cheapest model is enough |
+
+If a subagent's report looks shallow or inconsistent, the orchestrator
+may rerun that one agent with a stronger model, and should say so.
+
+**Inputs.** Before launching, the orchestrator makes the in-scope files
+readable by the subagents (on the device shell if it works; otherwise by
+staging them into the container) and passes each subagent the file
+paths, the scope, and the parts of this file relevant to its focus.
+Each subagent only receives the scope it needs:
+
+- **science** — reads: the in-scope proposal sections (mainly
+  Motivation/Significance/Scientific Challenges, State of the Art,
+  Scientific Approach/Methodology/Novelty, and the Project Summary),
+  `application/references.bib`, and CVs only where supervisors'
+  scientific expertise is claimed. Covers:
+  - Scientific excellence and novelty: is the contribution concrete,
+    and genuinely beyond the state of the art?
+  - Is the *necessity* of the interdisciplinary angle argued
+    scientifically (not window-dressing)?
+  - State of the Art: citations checked against `references.bib`
+    (missing entries, unsupported claims, relevant uncited entries);
+    it may use web search for the wider literature, but must keep those
+    findings in a clearly separate subsection.
+  - Scientific soundness and feasibility of the methodology within a
+    3-year PhD; scientific merit of the PI and partners as it bears on
+    delivering the science.
+- **strategy** — reads: the in-scope proposal sections (mainly Project
+  relevance to CEBE research fields, Sustainability goals & relation to
+  CEBE vision, Research Environment and Supervision, Stakeholders,
+  and the Project Summary), the call PDF, and the RF7 roadmap PDF.
+  Covers:
+  - Relevance to CEBE's overall vision and to field #7 as primary
+    field; the full RF7 roadmap consistency check described under
+    "Knowledge base for review" (WP7.1–7.4 mapping, additive vs.
+    duplicative, RF3/RF4/RF5 interfaces, stakeholder alignment).
+  - Concrete synergies only achievable because it's interdisciplinary;
+    cross-university collaboration argued as a strength.
+  - Stakeholder/industry involvement: named, specific, credible.
+  - Sustainability goals: specific rather than boilerplate.
+  - Why a PhD is the right vehicle, and why this candidate.
+- **formalities** — reads: all in-scope files (proposal, abstract,
+  CVs), the templates, `templates/README.md`, `application/README.md`,
+  and the call PDF. Covers:
+  - Required structure mirrored exactly (frontpage, exact headings,
+    section order) and template conformity (preamble, formatting:
+    Times New Roman 12 pt, single spacing, 2.5 cm margins).
+  - Page limits (via `PAGEMARK` in the compile log, if a log is
+    available; otherwise flag that a compile is needed).
+  - Each CV: present, max 2 pages, required minimum content (PhD year,
+    achievements/impact statement, supervision counts, 10 publications
+    as 5 most important + 5 recent-relevant, ORCID/Scopus); names,
+    titles and affiliations consistent across proposal and CVs;
+    placeholders still left in, flagged by file name.
+  - Fixed facts from the call: PhD duration (max 3 yrs), budget figures
+    (DKK 750,000 + 240,000 + consumables ≤ 100,000), time split between
+    groups, start date by 30 May 2027, deadline 30 Sept 2026,
+    single-PDF submission.
+  - Internal consistency of numbers, dates and names throughout.
+
+**Output format.** Each subagent returns a structured report grouped by
+file/section: strengths, gaps (each tied to the evaluation criterion it
+affects), questions for Giuseppe, and at most a few concrete
+suggestions — never rewritten proposal text. The orchestrator merges
+the three reports into one review for Giuseppe (removing duplicates,
+labelled by agent), asks any clarifying questions, and writes one dated
+`FEEDBACK.md` entry that states the scope reviewed.
 
 ### Knowledge base for review
 
@@ -365,9 +454,11 @@ update all templates" / "please give me feedback on the application")
 that drive most work here. The steps below apply to both a triggered
 full pass and any ad hoc review request for a single section.
 
-1. When Giuseppe shares, updates, or asks for feedback on a section (or
-   the whole application), read it alongside the relevant call
-   requirement, `application/references.bib`, and (where relevant) the CVs.
+1. When Giuseppe asks for a review, first confirm the scope (full
+   application or specific parts), then run the three review subagents
+   (see "Review subagents") on that scope. Each reads the in-scope files
+   alongside the relevant call requirement, `application/references.bib`,
+   and (where relevant) the CVs and the RF7 roadmap.
 2. Ask clarifying questions before giving feedback if something is
    ambiguous or missing context.
 3. Give structured feedback per section: strengths, gaps against the
