@@ -1,5 +1,69 @@
-Regarding equipment, as I put down to make a final decision based on discussions with stakeholders on whether we would like to go into supporting remote/office work (VR) or on-site (AR), I have two upcoming devices in mind for either criteria that cost approx the same. For VR, Meta just announced a lightweight headset for spring next year that will cost approx 1300 USD called VR Glasses, and for AR, there is an upcoming lightweight device called XREAL Aura for approx 1500 USD. If we could earmark about 15 000 DKK for equipment (including potential upgrades or accessories), that would be great. 
+% ==============================================================================
+% CEBE Interdisciplinary Fellowship Programme -- Budget (sketch)
+% Standalone document with the same formatting as main.tex:
+% Times (mathptmx), 12 pt, single-spaced, 2.5 cm margins.
+%
+% Build: pdflatex budget-sketch.tex   (or latexmk -pdf budget-sketch.tex)
+% Amounts in DKK. Project period: 1 January 2027 -- 31 December 2029.
+% ==============================================================================
 
-Then I would also consider costs related to LLM/VLM usage. I have limited experience here, but there could be a mix of hardware for self hosting models, and cloud API tokens for frontier models during studies and deployment. Just estimating, perhaps 45 000 – 50 000 DKK.
+\documentclass[12pt,a4paper]{article}
 
-AI use is covered by the section of structural engineering.
+% ---- Page geometry: 2.5 cm margins on all sides ----
+\usepackage[a4paper,margin=2.5cm]{geometry}
+
+% ---- Font: Times-compatible, 12pt ----
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+
+% ---- Single-spaced body text ----
+\usepackage{setspace}
+\singlespacing
+
+% ---- Packages (as in main.tex) ----
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{ragged2e}
+
+\newcommand{\pagemark}[1]{\typeout{PAGEMARK: #1 -- page \thepage}}
+\newcommand{\projectname}{\textbf{HAI-BRI }}
+
+\begin{document}
+
+\pagemark{Budget -- start}
+\section*{Budget}
+
+\justifying
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.8em}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+\textbf{Item (DKK)} & \textbf{2027} & \textbf{2028} & \textbf{2029} & \textbf{Total} \\
+\midrule
+PhD salary (4\% yearly increase)                        & 576{,}000 & 600{,}000 & 624{,}000 & 1{,}800{,}000 \\
+PhD education rate                 &  80{,}000 &  80{,}000 &  80{,}000 &   240{,}000 \\
+Consumables: XR equipment          &  20{,}000 &        -- &        -- &    20{,}000 \\
+Consumables: travel                &  30{,}000 &  25{,}000 &  25{,}000 &    80{,}000 \\
+Project supplement                 & 250{,}000 & 250{,}000 & 250{,}000 &   750{,}000 \\
+\midrule
+\textbf{Total requested from CEBE} & \textbf{951{,}000} & \textbf{960{,}000} & \textbf{979{,}000} & \textbf{2{,}890{,}000} \\
+\midrule
+\textit{In kind: LLM/VLM compute (AU CAE)} & \textit{20{,}000} & \textit{20{,}000} & \textit{20{,}000} & \textit{60{,}000} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The PhD candidate, Lorenzo Loyola, is already employed at Aarhus University and can start on 1~January~2027. Consumables (equipment, running expenses and travel) are kept within the DKK~100{,}000 limit of the call; XR equipment covers one lightweight VR or AR headset with accessories, depending on the on-site versus remote use case selected with the stakeholders.
+
+Costs for LLM/VLM use (self-hosted hardware and cloud API access for frontier models during development and user studies) are estimated at DKK~60{,}000 and will be covered in kind by the Structural Engineering section of the Department of Civil and Architectural Engineering, Aarhus University. These costs are therefore not included in the amount requested from CEBE.
+
+The research stay at ETH Zurich exceeds what the travel budget can cover and will be funded through external mobility grants, for which the candidate will apply in the first project year. Danish foundations routinely support PhD stays abroad (e.g., [Otto M{\o}nsted Fond, Augustinus Fonden, William Demant Fonden]), in addition to the mobility support of the AU Graduate School of Technical Sciences.
+
+\pagemark{Budget -- end}
+
+\end{document}
