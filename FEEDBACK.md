@@ -52,9 +52,9 @@ orchestrator). Line numbers refer to main.tex as of this date.
   never used by WP2/WP3; SHM/OMA/model updating (PI expertise, L286)
   plays no role in reasoning; corrosion appears only as a KG label
   (L238); Angst's role (L288) peripheral.
-- Call requirements not addressed: why a PhD (vs postdoc) and why this
+- ~~Call requirements not addressed: why a PhD (vs postdoc) and why this
   candidate (Lorenzo not mentioned in 2.1); time split across research
-  groups (L280, "18 months at ETHZ") unclear if AU/ETH count as 3–4 groups.
+  groups (L280, "18 months at ETHZ") unclear if AU/ETH count as 3–4 groups.~~
 
 ### Motivation, Significance and Scientific Challenges (science, strategy)
 - Q1–Q3 (L179–181) lack operational measures and baselines; Q2 unassigned
@@ -90,8 +90,8 @@ orchestrator). Line numbers refer to main.tex as of this date.
   T3.3 metrics (L251).
 - No ground truth for "decision accuracy"; participants (number, profile)
   and baselines undefined; no benchmark/metric for WP2 agent.
-- Case study inconsistent: global-south bridges (L231) vs Aarhus in the
-  summary; "University of Salvador" (L231) vs UFBA (L297, L326).
+- ~~Case study inconsistent: global-south bridges (L231) vs Aarhus in the
+  summary; "University of Salvador" (L231) vs UFBA (L297, L326).~~
 - Feasibility/risk for one PhD in 3 years not addressed (data sparsity at
   global-south sites, hallucination, recruitment, XR hardware).
 - "A new paradigm" (L271) unsupported. Three-condition comparison (L259)
@@ -103,24 +103,25 @@ orchestrator). Line numbers refer to main.tex as of this date.
   CVs are filled.
 
 ### Stakeholders (strategy)
-- Aarhus Municipality and COWI roles passive ("share input", "be exposed
+- ~~Aarhus Municipality and COWI roles passive ("share input", "be exposed
   to", L329); richer commented text (L315–321) was cut. Danish Road
-  Directorate (named in RF7 roadmap p.11) absent.
+  Directorate (named in RF7 roadmap p.11) absent.~~
 
 ### Project relevance to CEBE research fields (strategy, RF7 check)
-- No explicit WP7.1–7.4 mapping (fits WP7.1 and WP7.4).
-- L348 claims RF7 AU baseline focuses on sensing hardware, but roadmap
+- ~~No explicit WP7.1–7.4 mapping (fits WP7.1 and WP7.4).~~
+- ~~L348 claims RF7 AU baseline focuses on sensing hardware, but roadmap
   pp.13–14 lists AU-led "AI/Robot assisted operation of SHM" and "UAV
-  inspection with computer vision": differentiation needed.
-- RF3/RF4/RF5 interfaces not discussed; roadmap p.16 names semantic
-  modelling, DT engineering and agentic AI as RF4/RF7 shared topics.
+  inspection with computer vision": differentiation needed.~~
+- ~~RF3/RF4/RF5 interfaces not discussed; roadmap p.16 names semantic
+  modelling, DT engineering and agentic AI as RF4/RF7 shared topics.~~
+
 
 ### Sustainability (strategy, formalities)
-- Heading must be "Sustainability goals of the project and relation to
+- ~~Heading must be "Sustainability goals of the project and relation to
   the CEBE program vision" (template L199), currently "Sustainability"
-  (L364).
-- No trade-offs stated (trade-off paragraph commented out, L380); no
-  explicit link to CEBE vision.
+  (L364).~~
+- ~~No trade-offs stated (trade-off paragraph commented out, L380); no
+  explicit link to CEBE vision.~~
 
 ### Formalities
 - Length (live text, comments excluded): Project Description ~2,200
@@ -128,10 +129,10 @@ orchestrator). Line numbers refer to main.tex as of this date.
   stakeholders 137) — borderline for 4 pages; relevance ~184 and
   sustainability ~154 words, likely within 1/2 page. Compile and
   `grep PAGEMARK main.log` to confirm.
-- Typos: "brdige" (L237); "Assoc.d" (L237, L380) and "will Assoc."
+- ~~Typos: "brdige" (L237); "Assoc.d" (L237, L380) and "will Assoc."
   (L249, L253) — likely find-and-replace of "associate"; "will be
   organize" (L237); "will supervised" (L286); "expertise in on" (L288);
-  "at at AU" (L280); "Geometic" should be "Geomatic" (L109–110).
+  "at at AU" (L280); "Geometic" should be "Geomatic" (L109–110).~~
 - Project Summary wrapped in \textcolor{blue}: remove before submission.
 - `ragged2e` package added vs template (minor).
 - No budget figures or start date in main.tex (check whether required
