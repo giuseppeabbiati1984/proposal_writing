@@ -63,7 +63,7 @@
 \newcommand{\pagemark}[1]{\typeout{PAGEMARK: #1 -- page \thepage}}
 
 \newcommand{\projectname}{\textbf{HAI-BRI }} % iDT, HAI-TWIN
-\newcommand{\asset}{case-study bridges}
+\newcommand{\asset}{bridge case-studies}
 
 % ---- Expected-length annotations -------------------------------------------
 % Prints the call's stated page limit right under each section heading, so
@@ -96,7 +96,7 @@
 {\large Call for PhD and PostDoc Projects}\par
 \vspace{1.5cm}
 
-{\Huge\bfseries Human--AI Collaborative Workflows for Immersive Digital Twins in Bridge Monitoring and Inspection}\par
+{\Huge\bfseries Human--AI Collaborative Workflows for Immersive Digital Twins in Bridge Monitoring and Inspection (HAI-BRI)}\par
 \vspace{0.5cm}
 {\large PhD project}\par
 
@@ -219,18 +219,18 @@ A central research challenge will be preventing the AI from presenting unsupport
 In this project, the DT is an evolving representation that integrates BIM/FEM models with inspection observations, sensor measurements, environmental information, historical records, deterioration states, and maintenance information. The semantic layer that connects these heterogeneous representations is implemented as a KG. %As an example, the observation of a damage feature (e.g., a localized crack) will be recorded as contextualized empirical evidence describing \textit{what} was observed, \textit{when} it occurred, \textit{which} structural component it concerns. AI will be able to guess \textit{which sources} are likely to have produced the evidence, and its relationship with previous observations.
 This will allow the DT to evolve as new evidence becomes available and provide a machine-interpretable representation of the infrastructure situation. The research program of \projectname is organized into three interconnected Work Packages (WPs). %WP1 develops the semantic representation of the physical asset and its evolving condition; WP2 develops multimodal, graph-grounded AI for evidence-based interpretation and reasoning; and WP3 develops the human--AI collaboration environment and evaluates how the resulting system affects engineering SA and decision-making. \par
 %
-\textbf{WP1 Asset knowledge representation:} The main scientific contribution of WP1 will be a semantic model that links all digital assets associated with the \asset: \par \vspace{-0.3cm}
+\textbf{WP1 Asset knowledge representation (m1-m12):} The main scientific contribution of WP1 will be a semantic model that links all digital assets associated with the \asset: \par \vspace{-0.3cm}
 %
 \textbf{T1.1 Digital Twin foundation:} Technical drawings, historical inspection and maintenance records, monitoring data, and other available information on the \asset will be collected and structured. A BIM model will represent geometry and structural components, while a FEM model will represent mechanical behavior. Experimental data will be organized in databases.\par \vspace{-0.3cm}
 %
 \textbf{T1.2 Semantic layer:} A semantic layer will connect the BIM/FEM models with sensors, measurements (e.g., UAS imagery, inspection records), deterioration mechanisms (e.g., cracking and corrosion), and maintenance plans. Ontologies will define the relevant concepts and relationships, which will be instantiated as a KG. \par %As new inspection and monitoring evidence becomes available, the KG will be updated to represent the evolving condition and history for AI reasoning in WP2.\par
 %
-\textbf{WP2 Multimodal and Graph-Grounded AI:} The main scientific contribution of WP2 will be a multimodal, graph-grounded AI architecture for traceable infrastructure reasoning for evidence-based interpretation of bridge condition:\par \vspace{-0.3cm}
+\textbf{WP2 Multimodal and Graph-Grounded AI (m6-m24):} The main scientific contribution of WP2 will be a multimodal, graph-grounded AI architecture for traceable infrastructure reasoning for evidence-based interpretation of bridge condition:\par \vspace{-0.3cm}
 %
 \textbf{T2.1 Automated annotation of deterioration:} WP2 will investigate how AI can transform heterogeneous observations into evidence-grounded interpretations of bridge condition. LLM/VLM will identify and contextualize candidate observations from data. The objective is not to develop another universal defect detector, but to determine how automatically extracted observations can become structured evidence within the semantic DT.\par \vspace{-0.3cm}
 \textbf{T2.2 Automated reasoning on structure condition:} A graph-grounded LLM/VLM reasoning architecture will retrieve relevant asset-specific information from the KG before generating an engineering interpretation. The quality of AI-supported assessment changes as different information sources are removed or become incomplete will also be investigated. %This will establish whether reliable, trustworthy reasoning can be achieved in bridges where complete DTs, historical records, or extensive permanent sensor networks are unavailable.
 
-\textbf{WP3 Development and Evaluation of an Immersive Human–AI Collaboration Workflows Framework:} WP3 will develop and evaluate methods of human–AI collaborative workflows that support trust, appropriate reliance, and decision-making for bridge inspection within immersive environments:\par \vspace{-0.3cm}
+\textbf{WP3 Development and Evaluation of an Immersive Human–AI Collaboration Workflows Framework (m18-m36):} WP3 will develop and evaluate methods of human–AI collaborative workflows that support trust, appropriate reliance, and decision-making for bridge inspection within immersive environments:\par \vspace{-0.3cm}
 %
 \textbf{T3.1 Human–AI Collaboration Workflows: }T3.1 develops and implements the conversational agent connected to the DT, building the basis of the human–AI workflow. It will associate physical bridge components with current observations, historical changes, and sensor information that the user can query to build SA.\textbf{ }\par \vspace{-0.3cm}
 \textbf{T3.2 Immersive Component (XR): }T3.2. will enable immersive processes for experiencing the DT. Together with stakeholders, XR will be explored for their use with DTs for on-site and remote use, and paired with the workflow presented in T3.1. \par \vspace{-0.3cm}
