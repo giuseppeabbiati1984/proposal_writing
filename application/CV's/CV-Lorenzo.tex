@@ -1,6 +1,6 @@
 % ==============================================================================
 % CEBE Interdisciplinary Fellowship -- CV (PhD candidate)
-% Instantiated from the CEBE cv-template on 2026-09-27.
+% Instantiated from the CEBE cv-template on 2026-09-27; same style as cv-pi.tex.
 % Max 2 pages. Build from the project root: latexmk application/cv/cv-candidate.tex
 % ==============================================================================
 
@@ -13,6 +13,7 @@
 \usepackage{setspace}
 \singlespacing
 \usepackage{enumitem}
+\usepackage{needspace}
 \usepackage{xcolor}
 \usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
 
@@ -26,9 +27,8 @@
   \fi
 }
 
-\setlist{nosep,leftmargin=*}
-\newcommand{\cvhead}[1]{\vspace{0.12cm}\noindent\textbf{#1}\par\vspace{2pt}}
-\newcommand{\entry}[2]{\item[#1] #2}
+\setlist{itemsep=2pt,parsep=0pt,topsep=3pt}
+\emergencystretch=1.5em
 
 \pagenumbering{gobble}
 
@@ -38,63 +38,69 @@
 
 \begin{center}
 {\Large\bfseries Lorenzo Iv\'an Loyola Osorio}\par\vspace{2pt}
-Civil Engineer, MSc; PhD candidate (applicant)\par
-Dept. of Civil and Architectural Engineering (CAE), Aarhus University, Denmark\par
-\href{mailto:lorenzoloyola@cae.au.dk}{lorenzoloyola@cae.au.dk} $\cdot$ +45 71 39 37 98 $\cdot$ Holmbladsgade 70C, st.\ 3, 2300 K\o benhavn S
+Civil Engineer, MSc -- PhD candidate (applicant)\par
+Dept. of Civil and Architectural Engineering (CAE), Aarhus University, Denmark
 \end{center}
 
-\vspace{0.2cm}
-\noindent\textbf{ORCID:} \url{https://orcid.org/0009-0005-2489-2677}
+\vspace{0.3cm}
+\noindent\textbf{ORCID:} 0009-0005-2489-2677, \textbf{e-mail:} \href{mailto:lorenzoloyola@cae.au.dk}{lorenzoloyola@cae.au.dk}, \textbf{phone:} +45 71 39 37 98
 
-\cvhead{Education}
-\begin{itemize}[labelwidth=2.9cm,labelsep=0.3cm,align=left]
-  \entry{2023--2025}{\textbf{MSc in Civil and Architectural Engineering}, Aarhus University. GPA 9.6/12. Thesis: \emph{Digital Twin and Virtual Environment for Autonomous Bridge Inspection}, grade 12/12 (top grade).}
-  \entry{2010--2018}{\textbf{Civil Engineer, Structural and Construction} (professional degree, 2018; Bachelor of Engineering Sciences, 2014), University of Chile. Thesis: \emph{Development of a BIM software application for interoperability between structural analysis and 3D reinforcement representation in reinforced-concrete walls}, grade 7.0/7.0 (highest distinction).}
+\vspace{0.5cm}
+\noindent\textbf{Education}
+\begin{itemize}
+\item M.Sc. in Civil and Architectural Engineering, Aarhus University, Denmark (2025). Thesis: ``Digital Twin and Virtual Environment for Autonomous Bridge Inspection'', grade 12/12.
+\item Civil Engineer, Structural and Construction (professional degree), University of Chile (2018). Thesis: ``Development of a BIM software application for interoperability between structural analysis and 3D reinforcement representation in reinforced-concrete walls'', grade 7.0/7.0.
+\item Bachelor of Engineering Sciences, University of Chile (2014).
 \end{itemize}
 
-\cvhead{Employment}
-\begin{itemize}[labelwidth=2.9cm,labelsep=0.3cm,align=left]
-  \entry{2026--present}{\textbf{Research Assistant}, Dept.\ of Civil and Architectural Engineering, Aarhus University (part-time, since March 2026). Ontology and knowledge graph for structural monitoring data; LLM-based access to building information. Training: Urban Digital Twin PhD Spring School (London, 2026); NRIS course on distributed LLM fine-tuning on HPC (2026).}
-  \entry{2025}{\textbf{Research Assistant} (project-based), Aarhus University (part-time). Real-time CO$_2$-monitoring digital twin for a construction site (Building the Future -- Global Innovation Network) with Acembee, Clevertrack and NIRAS.}
-  \entry{2024}{\textbf{Student Assistant}, Aarhus University (part-time). National survey on Lean construction and health and safety perceptions of construction workers in Denmark.}
-  \entry{2026--present}{\textbf{R\&D Senior Consultant}, Rene Lagos Engineers, Chile (part-time, remote). Public--private research collaborations; internal platform for economic evaluation of projects.}
-  \entry{2021--2026}{\textbf{Head of R\&D}, Rene Lagos Engineers, Chile (full-time until 2023, then part-time, remote). Led four engineers developing Revit API tools for automated code compliance and ETABS-to-BIM reinforcement modelling.}
-  \entry{2017--2021}{\textbf{R\&D Structural Engineer}, Rene Lagos Engineers, Chile. Reinforced-concrete design incl.\ seismic isolation; accelerometer instrumentation and dynamic monitoring; post-earthquake assessments (Mexico, 2017); pushover verification of Torre Santiago (300~m).}
-  \entry{2016--2017}{\textbf{Assistant Engineer}, Technical Office, Chile. Structural documentation.}
+\vspace{0.5cm}
+\noindent\textbf{Employments}
+\begin{itemize}
+\item Research Assistant, Department of Civil and Architectural Engineering, Aarhus University, Denmark (2026-now): ontology and knowledge graph for structural monitoring data.
+\item Research Assistant (project-based), Aarhus University, Denmark (2025): real-time CO$_2$-monitoring digital twin for a construction site with Acembee, Clevertrack and NIRAS.
+\item Student Assistant, Aarhus University, Denmark (2024): national survey on Lean construction and health and safety.
+\item R\&D Senior Consultant, Rene Lagos Engineers, Chile (2026-now, part-time, remote).
+\item Head of R\&D, Rene Lagos Engineers, Chile (2021-2026): led a team of four engineers developing BIM automation tools.
+\item R\&D Structural Engineer, Rene Lagos Engineers, Chile (2017-2021): reinforced-concrete design, structural instrumentation and monitoring, post-earthquake assessment.
+\item Assistant Engineer, Technical Office, Chile (2016-2017).
 \end{itemize}
 
-\cvhead{Research achievements and impact}
-\noindent My work connects structural-engineering practice with digital construction and covers the three layers of HAI-BRI: semantic digital twin, AI-based reasoning, and virtual environment for inspection. In Chilean practice (2017--2026) I led an R\&D team whose Revit add-ins automate the transfer of structural design data into BIM reinforcement models, and I gained hands-on monitoring experience through accelerometer instrumentation and post-earthquake field assessments. At Aarhus University I designed and deployed the sensors, database and web dashboard of a real-time CO$_2$-monitoring digital twin on an active construction site with three industry partners, presented at the Fehmarnbelt Results Conference and reported in two first-author digital-twin papers. My MSc thesis (grade 12) built a BIM-based digital twin coupled to a Gazebo/ROS~2 virtual environment for simulated autonomous UAV bridge inspection, submitted to i3CE 2026 with the PI. My current research develops an ontology and Neo4j knowledge graph for structural monitoring data and an LLM interface that answers natural-language questions about a building from the graph, which is the direct foundation of WP1 and WP2 of this proposal.
+\vspace{0.5cm}
+\noindent\textbf{Research achievements and impact}
 
-\cvhead{Supervision record}
-\noindent None to date (0 PhD students, 0 postdocs, 0 master's students); led four engineers in industry, 2021--2026.
+\noindent Lorenzo Loyola's research combines structural-engineering practice with digital construction. In industry he led the development of Revit add-ins that automate the transfer of structural design data into BIM reinforcement models, and carried out accelerometer-based monitoring and post-earthquake field assessments. At Aarhus University he deployed a real-time CO$_2$-monitoring digital twin on an active construction site with three industry partners (two first-author papers), built a BIM-based digital twin coupled to a Gazebo/ROS~2 virtual environment for simulated autonomous UAV bridge inspection (MSc thesis, submitted to i3CE 2026), and currently develops an ontology, Neo4j knowledge graph and LLM interface for structural monitoring data, the foundation of WP1 and WP2 of this proposal. Training: Urban Digital Twin PhD Spring School, London (2026); NRIS course on distributed LLM fine-tuning on HPC (2026).
 
-\cvhead{Selected publications}
+\vspace{0.5cm}
+\needspace{3\baselineskip}
+\noindent\textbf{Supervision record}
+
+\noindent None to date (0 PhD students, 0 postdocs, 0 master's students); led a team of four engineers in industry (2021-2026).
+
+\vspace{0.5cm}
+\noindent\textbf{Technical skills}
+
+\noindent Structural analysis (ETABS, SAFE, Robot, OpenSees, MATLAB); BIM automation (Revit API/C\#, Dynamo, Rhino/Grasshopper, IFC); data and AI (Python, SQL, Neo4j, LLM APIs, LangChain, scikit-learn); simulation and robotics (ROS~2, Gazebo, ArduPilot, MAVLink, MAVSDK). Languages: Spanish (native), English (full professional), Danish (A2).
+
+\vspace{0.5cm}
+\noindent\textbf{Selected publications}
+
 \noindent\textit{Five most relevant to the project:}
 \begin{enumerate}
-  \item Loyola, L., Martinez, J.~G., \& Abbiati, G. (2026). BIM-based digital twin for UAV bridge inspection. \emph{ASCE International Conference on Computing in Civil Engineering (i3CE 2026)}. Submitted (paper ID 552).
-  \item Loyola, L., et al. An ontology for structural monitoring data. Journal article, in preparation.
-  \item Singh, S., et al., incl.\ Loyola, L. (2026). LLM-assisted chatbot for data-driven construction monitoring and decision support. \emph{AUC-CSCE Special Issue 50}.
-  \item Loyola, L.~I., \& Martinez, J.~G. (2025). Real-time energy and CO$_2$ optimization in construction cranes through digital twins and lean construction. \emph{Revista Ingenier\'ia de Construcci\'on}. \url{https://doi.org/10.7764/RIC.00166.21}
-  \item Loyola, L. (2025). \emph{Digital Twin and Virtual Environment for Autonomous Bridge Inspection}. MSc thesis, Aarhus University (grade 12/12).
-\end{enumerate}
-\noindent\textit{Other recent publications (last 5 years):}
-\begin{enumerate}[resume]
-  \item Martinez Ribon, J.~G., Montanari, P., Loyola, L.~I., \& Singhal, S. (2025). Uso de gemelos digitales y sensores IoT para la eficiencia energ\'etica de gr\'uas en construcci\'on. \emph{Simp\'osio Brasileiro de Tecnologia da Informa\c{c}\~ao e Comunica\c{c}\~ao na Constru\c{c}\~ao (SBTIC 2025)}. \url{https://doi.org/10.46421/sbtic.v5i00.8211}
-  \item Ullah, A.~N.~L., Puja, T.~C., Martinez, J., Loyola, L., \& Perez, F. (2026). Proactive safety management in earthwork operations using IoT-driven real-time risk analysis. \emph{European Conference on Computing in Construction (EC3 2026)}.
-  \item Anam, et al., incl.\ Loyola, L. (2026). Requests for information in construction projects: comparing systematic literature evidence with industry survey findings. \emph{CIB W78 2026}, New Delhi, India.
-  \item P\'erez, C.~T., Madushanka, M., Loyola, L., Ergul, M., \& Salling, S.~T. (2025). Health and safety perceptions of construction workers in Denmark. \emph{23rd CIB World Building Congress}, West Lafayette, USA. \url{https://doi.org/10.7771/3067-4883.1125}
-  \item P\'erez, C.~T., Madushanka, M., Loyola, L., Ergul, M., Salling, S.~T., \& Wandahl, S. (2024). The impact of Lean knowledge and Lean operation on construction workers' job satisfaction. \emph{32nd Annual Conference of the International Group for Lean Construction (IGLC32)}. \url{https://doi.org/10.24928/2024/0188}
+  \item Loyola, L., Martinez, J.~G., \& Abbiati, G. (2026). BIM-based digital twin for UAV bridge inspection. ASCE International Conference on Computing in Civil Engineering (i3CE 2026), submitted.
+  \item Loyola, L., et al. (in preparation). An ontology for structural monitoring data. Journal article.
+  \item Singh, S., et al., incl.\ Loyola, L. (2026). LLM-assisted chatbot for data-driven construction monitoring and decision support. AUC-CSCE Special Issue 50.
+  \item Loyola, L.~I., \& Martinez, J.~G. (2025). Real-time energy and CO$_2$ optimization in construction cranes through digital twins and lean construction. Revista Ingenier\'ia de Construcci\'on, \url{10.7764/RIC.00166.21}.
+  \item Loyola, L. (2025). Digital Twin and Virtual Environment for Autonomous Bridge Inspection. MSc thesis, Aarhus University.
 \end{enumerate}
 
-\cvhead{Technical skills and languages}
-\begin{itemize}
-  \item \textbf{Structural engineering:} RC and seismic design, dynamic analysis, monitoring; ETABS, SAFE, Robot, OpenSees, MATLAB.
-  \item \textbf{BIM and digital construction:} Revit API add-ins (C\#/.NET), Dynamo, Navisworks, Rhino, Grasshopper, IFC.
-  \item \textbf{Data, AI and digital twins:} Python, SQL, Neo4j, Power BI, LLM APIs, LangChain, scikit-learn, pandas; IoT sensor integration, database design.
-  \item \textbf{Simulation and robotics:} ROS~2, Gazebo, ArduPilot, MAVLink/MAVSDK, Blender.
-  \item \textbf{Languages:} Spanish (native), English (full professional), Danish (A2).
-\end{itemize}
+\noindent\textit{Other recent publications (last 5 years):}
+\begin{enumerate}
+  \item Martinez Ribon, J.~G., Montanari, P., Loyola, L.~I., \& Singhal, S. (2025). Uso de gemelos digitales y sensores IoT para la eficiencia energ\'etica de gr\'uas en construcci\'on. Simp\'osio Brasileiro de Tecnologia da Informa\c{c}\~ao e Comunica\c{c}\~ao na Constru\c{c}\~ao (SBTIC 2025), \url{10.46421/sbtic.v5i00.8211}.
+  \item Ullah, A.~N.~L., Puja, T.~C., Martinez, J., Loyola, L., \& Perez, F. (2026). Proactive safety management in earthwork operations using IoT-driven real-time risk analysis. European Conference on Computing in Construction (EC3 2026).
+  \item Anam, et al., incl.\ Loyola, L. (2026). Requests for information in construction projects: comparing systematic literature evidence with industry survey findings. CIB W78 2026, New Delhi, India.
+  \item P\'erez, C.~T., Madushanka, M., Loyola, L., Ergul, M., \& Salling, S.~T. (2025). Health and safety perceptions of construction workers in Denmark. 23rd CIB World Building Congress, West Lafayette, USA, \url{10.7771/3067-4883.1125}.
+  \item P\'erez, C.~T., Madushanka, M., Loyola, L., Ergul, M., Salling, S.~T., \& Wandahl, S. (2024). The impact of Lean knowledge and Lean operation on construction workers' job satisfaction. 32nd Annual Conference of the International Group for Lean Construction (IGLC32), \url{10.24928/2024/0188}.
+\end{enumerate}
 
 \pagemark{CV Lorenzo Loyola (candidate) -- end}
 \end{document}
